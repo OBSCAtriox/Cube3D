@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   verify_allocs.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 17:56:20 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/13 19:02:45 by tide-pau         ###   ########.fr       */
+/*   Created: 2026/03/13 18:20:37 by tide-pau          #+#    #+#             */
+/*   Updated: 2026/03/13 18:24:35 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "cube3d.h"
 
-int main(int argc, char *argv[])
+void if_allocated_free(t_data *data)
 {
-    t_data data;
-    
-    if (argc != 2)
-        exit_error(&data, "Error\n");
-    data.file = ft_strdup(argv[1]);
-    execute_verifications(&data);
+    if (data->file)
+        free(data->file);
 }

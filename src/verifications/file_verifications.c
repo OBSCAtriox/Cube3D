@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   file_verifications.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 17:56:20 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/13 19:02:45 by tide-pau         ###   ########.fr       */
+/*   Created: 2026/03/13 17:14:44 by tide-pau          #+#    #+#             */
+/*   Updated: 2026/03/13 17:20:41 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "cube3d.h"
 
-int main(int argc, char *argv[])
+int verify_file_extension(char *str)
 {
-    t_data data;
-    
-    if (argc != 2)
-        exit_error(&data, "Error\n");
-    data.file = ft_strdup(argv[1]);
-    execute_verifications(&data);
+    int len;
+
+    len = ft_strlen(str);
+    if (len < 4)
+        return (0);
+    return (ft_strcmp(str + len - 4, ".cub"));
 }

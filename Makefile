@@ -9,9 +9,11 @@ LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 LIBS = -lm
 
-SRC = main.c
+SRC = main.c src/errors/exit_error.c src/verifications/execute_verifications.c \
+src/verifications/file_verifications.c src/verifications/verify_allocs.c \
 
-OBJ = $(SRC:.c=.o)
+OBJ_DIR = obj
+OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)
 
 all: $(LIBFT) $(NAME)
 
@@ -22,7 +24,8 @@ $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR) bonus
 	@echo -e "📚$(FGCYAN)Libft Compilation Sucessfull$(RESET)📚"
 
-%.o: %.c
+$(OBJ_DIR)/%.o: %.c
+	@mkdir -p $(dir $@)
 	@echo -e "✨$(FGYELLOW)Object Compilation Sucessfull✨"
 	$(CC) $(FLAGS) -c $< -o $@
 	@echo -e "$(RESET)"
