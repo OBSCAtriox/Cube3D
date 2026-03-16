@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 18:20:37 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/16 20:13:01 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/16 20:20:30 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	if_allocated_free(t_data *data)
 {
 	if (data->file)
 		free(data->file);
-    if_textures_alloc_free(data);
+	if_textures_alloc_free(data);
 }
 
 void	if_textures_alloc_free(t_data *data)

@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:35:21 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/16 20:16:29 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/16 20:20:19 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,34 +96,34 @@ int	line_identifier_parse(t_data *data, char *line)
 
 int	parse_identifiers(t_data *data)
 {
-    char *orig;
+	char	*orig;
 	char	*line;
 	int		fd;
-    int count;
+	int		count;
 
-    count = 0;
+	count = 0;
 	fd = open(data->file, O_RDONLY);
 	if (fd < 0)
 		return (0);
 	while ((line = get_next_line(fd)) != NULL)
-	{   
-        if (is_empty_line(line))
-        {
-            free(line);
-            continue;
-        }
-        orig = line;
+	{
+		if (is_empty_line(line))
+		{
+			free(line);
+			continue ;
+		}
+		orig = line;
 		line = trim_lead(line);
 		if (!line_identifier_parse(data, line))
-        {
-            free(orig);
-            close(fd);
+		{
+			free(orig);
+			close(fd);
 			return (0);
-        }
-        free(orig);
-        count++;
-        if (count == 6)
-            break ;
+		}
+		free(orig);
+		count++;
+		if (count == 6)
+			break ;
 	}
 	close(fd);
 	return (1);
