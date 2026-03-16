@@ -13,6 +13,7 @@ LIBS = -lm
 
 SRC = main.c src/errors/exit_error.c src/verifications/execute_verifications.c \
 src/verifications/file_verifications.c src/verifications/verify_allocs.c \
+src/map/parse_cub_identifiers.c src/map/parse_cub_identifiers_utils.c \
 
 OBJ_DIR = obj
 OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)

@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   file_verifications.c                               :+:      :+:    :+:   */
+/*   parse_cub_identifiers_utils.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/13 17:14:44 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/16 17:32:27 by tide-pau         ###   ########.fr       */
+/*   Created: 2026/03/16 19:28:15 by tide-pau          #+#    #+#             */
+/*   Updated: 2026/03/16 19:30:30 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "cube3d.h"
 
-int verify_file_extension(char *str)
+int is_empty_line(char *line)
 {
-    int len;
-
-    len = ft_strlen(str);
-    if (len < 4)
+    if (!line)
         return (1);
-    return (ft_strcmp(str + len - 4, ".cub"));
+    while (*line)
+    {
+        if (*line != ' ' && *line != '\t' && *line != '\n')
+            return (0);
+        line++;
+    }
+    return (1);
 }
