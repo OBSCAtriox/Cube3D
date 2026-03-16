@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 17:14:44 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/13 17:20:41 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/16 16:10:35 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ int verify_file_extension(char *str)
 
     len = ft_strlen(str);
     if (len < 4)
-        return (0);
+        return (1);
     return (ft_strcmp(str + len - 4, ".cub"));
 }

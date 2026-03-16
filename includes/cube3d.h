@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 17:57:03 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/13 18:38:22 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/16 16:44:04 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <sys/time.h>
 # include <unistd.h>
 # include "../libft/libft.h"
+# include "../gnl/get_next_line.h"
 # include "../minilibx-linux/mlx.h"
 
 typedef struct s_data
