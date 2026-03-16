@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 17:57:03 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/16 20:07:17 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/16 20:13:19 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,6 @@ void			execute_verifications(t_data *data);
 
 // verify_allocs.c
 void			if_allocated_free(t_data *data);
+void	if_textures_alloc_free(t_data *data);
 
 #endif

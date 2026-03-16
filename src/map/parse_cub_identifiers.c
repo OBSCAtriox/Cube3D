@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:35:21 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/16 20:09:26 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/16 20:16:29 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,10 @@ int	parse_identifiers(t_data *data)
 	while ((line = get_next_line(fd)) != NULL)
 	{   
         if (is_empty_line(line))
+        {
+            free(line);
             continue;
+        }
         orig = line;
 		line = trim_lead(line);
 		if (!line_identifier_parse(data, line))
