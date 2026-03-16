@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 17:56:20 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/16 19:07:32 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/16 20:08:39 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
 {
     t_data data;
     
+    init_data(&data);
     if (argc != 2)
         exit_error(&data, "Error\n");
     data.file = ft_strdup(argv[1]);

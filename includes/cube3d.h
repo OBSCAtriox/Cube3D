@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 17:57:03 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/16 19:30:53 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/16 20:07:17 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,12 @@ typedef struct s_data
 	char		*file;
 	t_textures	textures;
 }				t_data;
+
+// src/inits
+// struct_inits.c
+void    init_data(t_data *data);
+void    init_textures(t_textures *text);
+
 
 // src/errors
 // exit_errors.c
