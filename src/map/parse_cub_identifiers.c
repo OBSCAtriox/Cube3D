@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:35:21 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/16 20:20:19 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/17 12:18:11 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,14 @@ int	parse_floor_color(t_data *data, char *line)
 		if (i == start)
 			return (0);
 		data->textures.fc[k++] = ft_atoi(line + start);
-		if (line[i] == ',')
+		if (k < 3 && line[i] == ',')
 			i++;
+		else if (k < 3 && line[i] != ',')
+			return (0);
 	}
-	return (k == 3);
+	while (line[i] == ' ' || line[i] == '\t' || line[i] == '\n')
+		i++;
+	return (k == 3 && line[i] == '\0');
 }
 
 int	parse_ceilling_color(t_data *data, char *line)
@@ -63,10 +67,14 @@ int	parse_ceilling_color(t_data *data, char *line)
 		if (i == start)
 			return (0);
 		data->textures.cc[k++] = ft_atoi(line + start);
-		if (line[i] == ',')
+		if (k < 3 && line[i] == ',')
 			i++;
+		else if (k < 3 && line[i] != ',')
+			return (0);
 	}
-	return (k == 3);
+	while (line[i] == ' ' || line[i] == '\t' || line[i] == '\n')
+		i++;
+	return (k == 3 && line[i] == '\0');
 }
 
 int	line_identifier_parse(t_data *data, char *line)
@@ -114,12 +122,8 @@ int	parse_identifiers(t_data *data)
 		}
 		orig = line;
 		line = trim_lead(line);
-		if (!line_identifier_parse(data, line))
-		{
-			free(orig);
-			close(fd);
+		if (!if_not_line_identifier_parse(data, line, orig, fd))
 			return (0);
-		}
 		free(orig);
 		count++;
 		if (count == 6)

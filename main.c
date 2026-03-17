@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 17:56:20 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/16 20:20:33 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/17 12:29:52 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,12 @@ int	main(int argc, char *argv[])
 	if (argc != 2)
 		exit_error(&data, "Error\n");
 	data.file = ft_strdup(argv[1]);
-	execute_verifications(&data);
+	if (verify_file_extension(data.file))
+		exit_error(&data, "File is Invalid\n");
 	if (!parse_identifiers(&data))
-		exit_error(&data, "ErrorTEST\n");
+		exit_error(&data, "Error: identifiers are incorrect\n");
+	execute_verifications(&data);
+	// TEST
 	printf("%s\n", data.textures.no);
 	printf("%s\n", data.textures.so);
 	printf("%s\n", data.textures.ea);

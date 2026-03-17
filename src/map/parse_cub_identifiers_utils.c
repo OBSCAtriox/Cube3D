@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 19:28:15 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/16 20:20:05 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/17 11:57:46 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,17 @@ int	is_empty_line(char *line)
 		if (*line != ' ' && *line != '\t' && *line != '\n')
 			return (0);
 		line++;
+	}
+	return (1);
+}
+
+int	if_not_line_identifier_parse(t_data *data, char *line, char *orig, int fd)
+{
+	if (!line_identifier_parse(data, line))
+	{
+		free(orig);
+		close(fd);
+		return (0);
 	}
 	return (1);
 }

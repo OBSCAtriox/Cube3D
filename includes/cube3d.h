@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 17:57:03 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/16 20:13:19 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/17 12:27:54 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,8 @@ typedef struct s_data
 
 // src/inits
 // struct_inits.c
-void    init_data(t_data *data);
-void    init_textures(t_textures *text);
-
+void			init_data(t_data *data);
+void			init_textures(t_textures *text);
 
 // src/errors
 // exit_errors.c
@@ -57,17 +56,21 @@ int				line_identifier_parse(t_data *data, char *line);
 int				parse_identifiers(t_data *data);
 
 // parse_cub_identifiers_utils.c
-int is_empty_line(char *line);
+int				is_empty_line(char *line);
+int				if_not_line_identifier_parse(t_data *data, char *line,
+					char *orig, int fd);
 
 // src/verifications
 // file_verifications.c
 int				verify_file_extension(char *str);
+int	verify_rgb(t_data *data);
+int verify_duplicate(t_textures *tex);
 
 // execute_verifications.c
 void			execute_verifications(t_data *data);
 
 // verify_allocs.c
 void			if_allocated_free(t_data *data);
-void	if_textures_alloc_free(t_data *data);
+void			if_textures_alloc_free(t_data *data);
 
 #endif
