@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   file_verifications.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: thiago <thiago@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 17:14:44 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/13 17:20:41 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/17 17:44:04 by thiago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "cube3d.h"
+#include "../../includes/cube3d.h"
 
 int verify_file_extension(char *str)
 {
