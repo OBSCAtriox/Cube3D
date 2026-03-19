@@ -7,6 +7,7 @@ NAME = cub3d
 
 GNL_DIR = gnl
 GNL = $(GNL_DIR)/gnl.a
+
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 LIBS = -lm
@@ -38,6 +39,9 @@ $(OBJ_DIR)/%.o: %.c
 	@echo -e "✨$(FGYELLOW)Object Compilation Sucessfull✨"
 	$(CC) $(FLAGS) -c $< -o $@
 	@echo -e "$(RESET)"
+
+mlx:
+	git clone https://github.com/42Paris/minilibx-linux.git
 
 clean:
 	rm -f $(OBJ)
