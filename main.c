@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 17:56:20 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/17 12:29:52 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:47:32 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,25 @@
 int	main(int argc, char *argv[])
 {
 	t_data	data;
-
+	int fd;
+	
+	fd = 0;
 	init_data(&data);
 	if (argc != 2)
-		exit_error(&data, "Error\n");
+		exit_error(&data, "Invalid number of arguments\n", 0);
 	data.file = ft_strdup(argv[1]);
 	if (verify_file_extension(data.file))
-		exit_error(&data, "File is Invalid\n");
-	if (!parse_identifiers(&data))
-		exit_error(&data, "Error: identifiers are incorrect\n");
+		exit_error(&data, "File is Invalid\n", 0);
+	verify_empty_file(&data, data.file);
+	verify_onlyspaces_file(&data);
+	cub_open(&data, &fd, data.file);
+	if (!parse_identifiers(&data, fd))
+	{
+		close(fd);
+		exit_error(&data, "Identifiers are incorrect\n", 0);
+	}
+	
+	close(fd);
 	execute_verifications(&data);
 	// TEST
 	printf("%s\n", data.textures.no);

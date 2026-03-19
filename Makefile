@@ -15,6 +15,7 @@ SRC = main.c src/errors/exit_error.c src/verifications/execute_verifications.c \
 src/verifications/file_verifications.c src/verifications/verify_allocs.c \
 src/map/parse_cub_identifiers.c src/map/parse_cub_identifiers_utils.c \
 src/inits/struct_inits.c src/verifications/verify_identifiers.c \
+src/map/parse_map.c src/open_utils/open.c \
 
 OBJ_DIR = obj
 OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)
