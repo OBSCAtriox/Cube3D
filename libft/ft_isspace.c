@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thiago <thiago@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 17:56:20 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/21 22:01:42 by thiago           ###   ########.fr       */
+/*   Created: 2026/03/21 20:47:32 by thiago            #+#    #+#             */
+/*   Updated: 2026/03/21 20:50:30 by thiago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "cube3d.h"
+#include "libft.h"
 
-int main(int argc, char *argv[])
+int ft_isspace(char c)
 {
-    t_data data;
-    t_game game;
-    
-    init_struct(&game, &data);
-    if (argc != 2)
-        exit_error(&data, "Error\n");
-    open_file(&data, argv[1]);
-    execute_verifications(&data);
+    if (c == 32 || (c >= 9 && c <= 13))
+        return (1);
     return (0);
 }
