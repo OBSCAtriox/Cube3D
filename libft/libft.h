@@ -6,7 +6,7 @@
 /*   By: thiago <thiago@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 18:23:38 by thde-sou          #+#    #+#             */
-/*   Updated: 2026/03/26 19:29:42 by thiago           ###   ########.fr       */
+/*   Updated: 2026/03/26 21:05:31 by thiago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,11 @@ int					ft_isspace(char c);
 char				**ft_split_whitespace(char *str);
 void				ft_strv_shift(char **vector);
 int					ft_strcmp(const char *s1, const char *s2);
+void				ft_memdel(void **prt);
+void				ft_clean_2(void **prt1, void **prt2);
+void				ft_clean_4(void **prt1, void **prt2, void **prt3,
+						void **prt4);
+void				ft_close_fd(int *fd);
 
 /*get_next_line*/
 

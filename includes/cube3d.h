@@ -10,6 +10,9 @@
 # include <unistd.h>
 # include "game.h"
 
+# define FALSE 0
+# define TRUE 1
+
 typedef struct s_ptex
 {
 	char		*no;
@@ -62,7 +65,8 @@ void				map_count_lines(t_data *data, int fd);
 
 // open_utils
 // open.c
-void    cub_open(t_data *data, int *fd, char *file);
+void    		cub_open(t_data *data, int *fd, char *file);
+int 			open_file(t_data *data, char *path);
 
 // src/verifications
 // file_verifications.c
@@ -78,5 +82,8 @@ void			execute_verifications(t_data *data);
 // verify_allocs.c
 void			if_allocated_free(t_data *data);
 void			if_textures_alloc_free(t_data *data);
+
+//load .cub
+int    			load_textures(t_data data, t_game *game);
 
 #endif

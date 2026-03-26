@@ -1,25 +1,18 @@
 #include "../../includes/cube3d.h"
 
-void open_file(t_data *data, char *path)
+int open_file(t_data *data, char *path)
 {
-    int fd[2];
-    int i;
+    int fd;
 
-    i = 0;
-    fd[0] = -1;
-    fd[1] = -1;
-    while(i < 2)
+    fd = -1;
+    fd = open(path, O_RDONLY);
+    if(fd == -1)
     {
-        fd[i] = open(path, O_RDONLY);
-        if(fd[i] == -1)
-        {
-            perror("Error\n");
-            exit(EXIT_FAILURE);
-        }
-        i++;
+        perror("Error:\n");
+        return (FALSE);
     }
-    data->fd_check = fd[0];
-    data->fd_load = fd[1];
+    data->fd_load = fd;
+    return (TRUE);
 }
 
 static char  *cat_path_texture(char *prt)
@@ -67,14 +60,14 @@ static int  upload_texture(t_game *game, char *flag, char *path)
 
     slot = get_slot_texture(game, flag);
     if(!slot)
-        return (0);
+        return (FALSE);
     slot->img.img_ptr = mlx_xpm_file_to_image(game->mlx, path, &slot->width, &slot->height);
     if(!slot->img.img_ptr)
-        return (0);
+        return (FALSE);
     slot->img.addr = mlx_get_data_addr(slot->img.img_ptr, &slot->img.bpp, &slot->img.line_len, &slot->img.endian);
     if(!slot->img.addr)
-        return (0);
-    return (1);
+        return (FALSE);
+    return (TRUE);
 } 
 
 static char *found_path(char *line, t_data data, char **flag)
@@ -103,7 +96,7 @@ static char *found_path(char *line, t_data data, char **flag)
     return (NULL);
 }
 
-void    load_textures(t_data data, t_game *game)
+int    load_textures(t_data data, t_game *game)
 {
     char    *line;
     char    *path;
@@ -115,19 +108,19 @@ void    load_textures(t_data data, t_game *game)
     {
         line = ft_gnl(data.fd_load);
         if (!line)
-            return ;
+            return (FALSE);
         path = found_path(line, data, &flag);
         if (path)
         {
             if (!upload_texture(game, flag, path))
             {
-                free(path);
-                free(line);
-                return ;
+                ft_clean_2(&path, &line);
+                return (FALSE);
             }
             n_texture++;
             free(path);
         }
         free(line);
     }
+    return (TRUE);
 }
