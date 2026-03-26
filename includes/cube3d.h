@@ -1,19 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   cube3d.h                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: thiago <thiago@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 17:57:03 by tide-pau          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2026/03/26 18:25:40 by thiago           ###   ########.fr       */
-=======
-/*   Updated: 2026/03/19 14:47:25 by tide-pau         ###   ########.fr       */
->>>>>>> 0f48d1871a934b77457a38491eea63728e25fc8d
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef CUBE3D_H
 # define CUBE3D_H
 
@@ -39,15 +23,11 @@ typedef struct s_ptex
 typedef struct s_data
 {
 	char		*file;
-<<<<<<< HEAD
-	t_ptex	textures;
-=======
 	char		**map;
 	int			num_lines;
 	void		*mlx;
 	void		*win;
-	t_textures	textures;
->>>>>>> 0f48d1871a934b77457a38491eea63728e25fc8d
+	t_ptex		textures;
 }				t_data;
 
 // src/inits
@@ -85,7 +65,7 @@ void    cub_open(t_data *data, int *fd, char *file);
 // file_verifications.c
 int				verify_file_extension(char *str);
 int				verify_rgb(t_data *data);
-int				verify_duplicate(t_textures *tex);
+int				verify_duplicate(t_ptex *tex);
 void			verify_empty_file(t_data *data, char *file);
 void			verify_onlyspaces_file(t_data *data);
 

@@ -56,6 +56,12 @@ fclean: clean
 	$(MAKE) -C $(LIBFT_DIR) fclean
 	$(MAKE) -C $(GNL_DIR) fclean
 	@echo -e "$(RESET)"
+	rm -rf $(NAME).zip
+
+
+zip: fclean
+	rm -rf $(NAME).zip
+	zip -r $(NAME).zip .
 
 re: fclean all
 

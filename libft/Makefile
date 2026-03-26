@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+         #
+#    By: thiago <thiago@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/15 18:08:12 by thde-sou          #+#    #+#              #
-#    Updated: 2026/01/19 15:47:25 by tide-pau         ###   ########.fr        #
+#    Updated: 2026/03/21 21:32:39 by thiago           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ ft_isalnum.c  ft_memcmp.c   ft_putstr_fd.c   ft_strlcpy.c   ft_substr.c \
 ft_isalpha.c  ft_memcpy.c   ft_split.c       ft_strlen.c    ft_tolower.c \
 ft_isascii.c  ft_memmove.c  ft_strchr.c      ft_strmapi.c   ft_toupper.c \
 ft_isdigit.c  ft_memset.c   ft_strdup.c      ft_strncmp.c	ft_itoa_base.c \
-get_next_line.c get_next_line_utils.c ft_strcmp.c ft_isnumeric.c
+get_next_line.c get_next_line_utils.c ft_strcmp.c ft_isnumeric.c ft_isspace.c \
+ft_memmem.c
 
 SRC_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \

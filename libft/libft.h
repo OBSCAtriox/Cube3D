@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thiago <thiago@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 18:23:38 by thde-sou          #+#    #+#             */
-/*   Updated: 2026/01/10 18:05:35 by thde-sou         ###   ########.fr       */
+/*   Updated: 2026/03/21 21:34:28 by thiago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int					ft_isdigit(int c);
 int					ft_isascii(int c);
 int					ft_isalpha(int c);
 int					ft_isalnum(int c);
+int 				ft_isspace(char c);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -80,6 +81,9 @@ void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *list, void (*f)(void *));
 int					ft_lstsize(t_list *lst);
+void				*ft_memmem(const void *haystack, size_t haystacklen,
+						const void *needle, size_t needlelen);
+//gnl
 char				*get_next_line(int fd);
 void				found_rest(char *buffer);
 size_t				ft_strlen_modified(char const *s);
