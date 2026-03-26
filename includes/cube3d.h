@@ -9,6 +9,7 @@
 # include <stdlib.h>
 # include <sys/time.h>
 # include <unistd.h>
+# include "game.h"
 
 typedef struct s_ptex
 {
@@ -27,6 +28,9 @@ typedef struct s_data
 	int			num_lines;
 	void		*mlx;
 	void		*win;
+	int			fd_check;
+	int			fd_load;
+	char		*flag_texture[5];
 	t_ptex		textures;
 }				t_data;
 
