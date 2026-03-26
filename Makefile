@@ -7,6 +7,7 @@ NAME = cub3d
 
 GNL_DIR = gnl
 GNL = $(GNL_DIR)/gnl.a
+
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 LIBS = -lm
@@ -15,6 +16,7 @@ SRC = main.c src/errors/exit_error.c src/verifications/execute_verifications.c \
 src/verifications/file_verifications.c src/verifications/verify_allocs.c \
 src/map/parse_cub_identifiers.c src/map/parse_cub_identifiers_utils.c \
 src/inits/struct_inits.c src/verifications/verify_identifiers.c \
+src/map/parse_map.c src/open_utils/open.c \
 
 OBJ_DIR = obj
 OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)
@@ -37,6 +39,9 @@ $(OBJ_DIR)/%.o: %.c
 	@echo -e "✨$(FGYELLOW)Object Compilation Sucessfull✨"
 	$(CC) $(FLAGS) -c $< -o $@
 	@echo -e "$(RESET)"
+
+mlx:
+	git clone https://github.com/42Paris/minilibx-linux.git
 
 clean:
 	rm -f $(OBJ)

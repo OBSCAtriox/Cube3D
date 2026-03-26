@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 17:14:44 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/16 20:20:28 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:49:36 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,41 @@ int	verify_file_extension(char *str)
 	if (len < 4)
 		return (1);
 	return (ft_strcmp(str + len - 4, ".cub"));
+}
+
+void	verify_empty_file(t_data *data, char *file)
+{
+	int fd;
+	char c;
+	
+	fd = 0;
+	cub_open(data, &fd, file);
+	if (read(fd, &c, 1) == 0)
+	{
+		close(fd);
+		exit_error(data, "Empty file\n", 0);
+	}
+	close(fd);
+}
+
+void verify_onlyspaces_file(t_data *data)
+{
+	int fd;
+	char c;
+	int rret;
+	
+	fd = 0;
+	cub_open(data, &fd, data->file);
+	rret = read(fd, &c, 1);
+	while (rret > 0)
+	{
+		if (c != ' ' && c != '\n' && c != '\t')
+		{
+			close(fd);
+			return ;
+		}
+		rret = read(fd, &c, 1);
+	}
+	close(fd);
+	exit_error(data, "File contains only spaces\n", 0);
 }

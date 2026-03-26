@@ -1,23 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit_error.c                                       :+:      :+:    :+:   */
+/*   init_textures.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/13 17:23:52 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/19 14:50:48 by tide-pau         ###   ########.fr       */
+/*   Created: 2026/03/17 12:40:52 by tide-pau          #+#    #+#             */
+/*   Updated: 2026/03/17 12:41:00 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3d.h"
+# include "cube3d.h"
 
-void	exit_error(t_data *data, char *msg, int f)
-{
-	if_allocated_free(data);
-	write(2, "Error\n", 6);
-	write(2, msg, ft_strlen(msg));
-	if (f)
-		perror("");
-	exit(1);
-}

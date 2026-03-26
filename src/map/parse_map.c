@@ -1,0 +1,88 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_map.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/17 12:37:13 by tide-pau          #+#    #+#             */
+/*   Updated: 2026/03/19 14:44:05 by tide-pau         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+# include "cube3d.h"
+
+int is_identifier_line(char *line)
+{
+    
+    if (!line)
+        return (0);
+    if (ft_strncmp(line, "NO ", 3))
+        return (1);
+    if (ft_strncmp(line, "SO ", 3))
+        return (1);
+    if (ft_strncmp(line, "WE ", 3))
+        return (1);
+    if (ft_strncmp(line, "EA ", 3))
+        return (1);
+    if (ft_strncmp(line, "F ", 2))
+        return (1);
+    if (ft_strncmp(line, "C ", 2))
+        return (1);
+    return (0);
+}
+
+void map_count_lines(t_data *data, int fd)
+{
+    char *line;
+    int count;
+    
+    count = 0;
+    line = get_next_line(fd);
+    while (is_empty_line(line))
+    {
+        free(line);
+        line = get_next_line(fd);
+    }
+    while (!is_empty_line(line))
+    {
+        count++;
+        free(line);
+        line = get_next_line(fd);
+    }
+    data->num_lines = count;
+}
+
+char *skip_to_map_start(int fd)
+{
+    char *line;
+    char *tmp;
+    
+    line = get_next_line(fd);
+    while (line)
+    {
+        tmp = trim_lead(line);
+        if (is_empty_line(tmp) || is_identifier_line(tmp))
+        {
+            free(line);
+            continue ;
+        }
+        break ;
+    }
+    if (!line)
+        return NULL;
+    return (line);
+}
+
+/* int create_parse_map(t_data *data)
+{
+    data->map = malloc(sizeof(char *) * data->num_lines + 1);
+    if (!data->map)
+        return (0);
+    
+}
+
+char **parse_map(t_data *data, int fd)
+{
+    
+} */
