@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   verify_identifiers.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: thiago <thiago@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 12:02:31 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/17 12:28:20 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/26 18:25:25 by thiago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	verify_rgb(t_data *data)
     return (1);
 }
 
-int verify_duplicate(t_textures *tex)
+int verify_duplicate(t_ptex *tex)
 {
     if (ft_strcmp(tex->no, tex->so) == 0)
         return (0);

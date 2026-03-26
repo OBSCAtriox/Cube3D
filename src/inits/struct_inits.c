@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   struct_inits.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: thiago <thiago@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 20:03:45 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/16 20:19:49 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/26 18:25:51 by thiago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube3d.h"
 
-void	init_textures(t_textures *text)
+void	init_textures(t_ptex *text)
 {
 	text->no = NULL;
 	text->so = NULL;

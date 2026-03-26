@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: thiago <thiago@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 17:57:03 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/17 12:27:54 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/26 18:25:40 by thiago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include <sys/time.h>
 # include <unistd.h>
 
-typedef struct s_textures
+typedef struct s_ptex
 {
 	char		*no;
 	char		*so;
@@ -30,18 +30,18 @@ typedef struct s_textures
 	char		*ea;
 	int			fc[3];
 	int			cc[3];
-}				t_textures;
+}				t_ptex;
 
 typedef struct s_data
 {
 	char		*file;
-	t_textures	textures;
+	t_ptex	textures;
 }				t_data;
 
 // src/inits
 // struct_inits.c
 void			init_data(t_data *data);
-void			init_textures(t_textures *text);
+void			init_textures(t_ptex *text);
 
 // src/errors
 // exit_errors.c
