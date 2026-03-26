@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: thiago <thiago@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 12:37:13 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/26 19:07:16 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/26 19:27:09 by thiago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,17 @@ void map_count_lines(t_data *data, int fd)
     int count;
     
     count = 0;
-    line = get_next_line(fd);
+    line = ft_gnl(fd);
     while (is_empty_line(line))
     {
         free(line);
-        line = get_next_line(fd);
+        line = ft_gnl(fd);
     }
     while (!is_empty_line(line))
     {
         count++;
         free(line);
-        line = get_next_line(fd);
+        line = ft_gnl(fd);
     }
     data->num_lines = count;
 }

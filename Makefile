@@ -24,7 +24,7 @@ $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) $(LIBFT) $(LIBS) -o $(NAME)
 
 $(LIBFT):
-	$(MAKE) -C $(LIBFT_DIR) bonus
+	$(MAKE) -C $(LIBFT_DIR) all
 	@echo -e "📚$(FGCYAN)Libft Compilation Sucessfull$(RESET)📚"
 
 $(OBJ_DIR)/%.o: %.c

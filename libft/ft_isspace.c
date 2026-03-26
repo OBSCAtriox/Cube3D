@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thiago <thiago@student.42.fr>              +#+  +:+       +#+        */
+/*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/21 20:47:32 by thiago            #+#    #+#             */
-/*   Updated: 2026/03/21 20:50:30 by thiago           ###   ########.fr       */
+/*   Created: 2026/01/25 00:59:44 by thde-sou          #+#    #+#             */
+/*   Updated: 2026/01/25 01:00:21 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isspace(char c)
+int	ft_isspace(char c)
 {
-    if (c == 32 || (c >= 9 && c <= 13))
-        return (1);
-    return (0);
+	if ((c >= 9 && c <= 13) || c == 32)
+		return (1);
+	return (0);
 }

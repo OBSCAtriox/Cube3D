@@ -6,7 +6,7 @@
 /*   By: thiago <thiago@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 18:23:38 by thde-sou          #+#    #+#             */
-/*   Updated: 2026/03/21 21:34:28 by thiago           ###   ########.fr       */
+/*   Updated: 2026/03/26 19:29:42 by thiago           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@
 # include <strings.h>
 # include <unistd.h>
 
+# ifndef MAX_FD
+#  define MAX_FD 1024
+# endif
+
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
 # endif
@@ -31,19 +35,15 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
-
-int					ft_isnumeric(char *str);
 int					ft_isprint(int c);
 int					ft_isdigit(int c);
 int					ft_isascii(int c);
 int					ft_isalpha(int c);
 int					ft_isalnum(int c);
-int 				ft_isspace(char c);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
-int					ft_strcmp(const char *s1, const char *s2);
-long long			ft_atoi(const char *nptr);
+int					ft_atoi(const char *nptr);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 char				*ft_itoa(int n);
 char				*ft_itoa_base(unsigned long n, const char *base);
@@ -81,14 +81,18 @@ void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *list, void (*f)(void *));
 int					ft_lstsize(t_list *lst);
-void				*ft_memmem(const void *haystack, size_t haystacklen,
-						const void *needle, size_t needlelen);
-//gnl
-char				*get_next_line(int fd);
-void				found_rest(char *buffer);
-size_t				ft_strlen_modified(char const *s);
-int					newline(char *s);
-char				*ft_strjoin_modified(char *s1, char const *s2);
-int					build_line(char *buffer, char **line, int fd);
+char				*ft_join3(char *s1, char *s2, char *s3);
+size_t				ft_size_vetor(char **vetor);
+char				**ft_vetor_dup(char **vetor);
+void				free_failed_vector(char ***vector, int idx);
+void				ft_free_vector(char ***vector);
+int					ft_isspace(char c);
+char				**ft_split_whitespace(char *str);
+void				ft_strv_shift(char **vector);
+int					ft_strcmp(const char *s1, const char *s2);
+
+/*get_next_line*/
+
+char				*ft_gnl(int fd);
 
 #endif
