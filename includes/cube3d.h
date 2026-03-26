@@ -1,7 +1,6 @@
 #ifndef CUBE3D_H
 # define CUBE3D_H
 
-# include "../gnl/get_next_line.h"
 # include "../libft/libft.h"
 # include "../minilibx-linux/mlx.h"
 # include <math.h>

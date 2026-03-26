@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 12:37:13 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/19 14:44:05 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/26 19:07:16 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char *skip_to_map_start(int fd)
     char *line;
     char *tmp;
     
-    line = get_next_line(fd);
+    line = ft_gnl(fd);
     while (line)
     {
         tmp = trim_lead(line);
