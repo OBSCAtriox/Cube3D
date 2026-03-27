@@ -1,20 +1,5 @@
 #include "../../includes/cube3d.h"
 
-int open_file(t_data *data, char *path)
-{
-    int fd;
-
-    fd = -1;
-    fd = open(path, O_RDONLY);
-    if(fd == -1)
-    {
-        perror("Error:\n");
-        return (FALSE);
-    }
-    data->fd_load = fd;
-    return (TRUE);
-}
-
 static char  *cat_path_texture(char *prt)
 {
     int i;
