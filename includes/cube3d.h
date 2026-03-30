@@ -69,8 +69,11 @@ void    alloc_map_line(t_data *data, int i, int y);
 int copy_map_line(t_data *data, char *line, int y);
 
 // parse_map_lines.c
+int is_valid_map_tile(char c);
+int verify_map_cluster(t_data *d);
 int	verify_line_borders(t_data *d);
 int verify_top_bottom_lines(t_data *d);
+void parse_map(t_data *data, int fd);
 
 // open_utils
 // open.c

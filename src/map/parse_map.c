@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 12:37:13 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/30 13:58:18 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/30 16:11:44 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,12 @@ int create_parse_map(t_data *data)
     return (1);
 }
 
-/* char **parse_map(t_data *data, int fd)
+void parse_map(t_data *data, int fd)
 {
-    
-} */
+    create_parse_map(data);
+    if (!verify_map_cluster(data) || !verify_line_borders(data) || !verify_top_bottom_lines(data))
+    {
+        close(fd);
+        exit_error(data, "Map is invalid\n", 0);
+    }
+}

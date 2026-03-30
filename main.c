@@ -21,7 +21,7 @@ int	main(int argc, char *argv[])
 		exit_error(&data, "Identifiers are incorrect\n", 0);
 	}
 	close(fd);
-	create_parse_map(&data);
+	parse_map(&data, fd);
 	execute_verifications(&data);
 	// TEST
 	printf("%s\n", data.textures.no);
