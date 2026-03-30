@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thiago <thiago@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 18:23:38 by thde-sou          #+#    #+#             */
-/*   Updated: 2026/03/26 21:05:31 by thiago           ###   ########.fr       */
+/*   Updated: 2026/03/27 20:57:49 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int					ft_lstsize(t_list *lst);
 char				*ft_join3(char *s1, char *s2, char *s3);
 size_t				ft_size_vetor(char **vetor);
 char				**ft_vetor_dup(char **vetor);
-void				free_failed_vector(char ***vector, int idx);
+void				ft_free_failed_vector(char ***vector, int idx);
 void				ft_free_vector(char ***vector);
 int					ft_isspace(char c);
 char				**ft_split_whitespace(char *str);
