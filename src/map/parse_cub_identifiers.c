@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:35:21 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/26 19:06:53 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/27 14:04:41 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,13 +79,13 @@ int	parse_ceilling_color(t_data *data, char *line)
 
 int	line_identifier_parse(t_data *data, char *line)
 {
-	if (ft_strncmp(line, "NO ", 3) == 0)
+	if (ft_strncmp(line, "NO ", 3) == 0 && !data->textures.no)
 		data->textures.no = ft_strdup(line + 3);
-	else if (ft_strncmp(line, "SO ", 3) == 0)
+	else if (ft_strncmp(line, "SO ", 3) == 0 && !data->textures.so)
 		data->textures.so = ft_strdup(line + 3);
-	else if (ft_strncmp(line, "WE ", 3) == 0)
+	else if (ft_strncmp(line, "WE ", 3) == 0 && !data->textures.we)
 		data->textures.we = ft_strdup(line + 3);
-	else if (ft_strncmp(line, "EA ", 3) == 0)
+	else if (ft_strncmp(line, "EA ", 3) == 0 && !data->textures.ea)
 		data->textures.ea = ft_strdup(line + 3);
 	else if (ft_strncmp(line, "F ", 2) == 0)
 	{

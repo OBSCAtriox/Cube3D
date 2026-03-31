@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_vetor_dup.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 00:34:30 by thde-sou          #+#    #+#             */
-/*   Updated: 2026/01/25 00:53:04 by thde-sou         ###   ########.fr       */
+/*   Updated: 2026/03/30 11:12:45 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	**ft_vetor_dup(char **vetor)
 		out[i] = ft_strdup(vetor[i]);
 		if (!out[i])
 		{
-			free_failed_vector(&out, i);
+			ft_free_failed_vector(&out, i);
 			return (NULL);
 		}
 		i++;

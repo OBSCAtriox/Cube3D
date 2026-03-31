@@ -3,8 +3,8 @@
 int	main(int argc, char *argv[])
 {
 	t_data	data;
-	int fd;
-	
+	int		fd;
+
 	fd = 0;
 	init_data(&data);
 	if (argc != 2)
@@ -20,8 +20,8 @@ int	main(int argc, char *argv[])
 		close(fd);
 		exit_error(&data, "Identifiers are incorrect\n", 0);
 	}
-	
 	close(fd);
+	parse_map(&data, fd);
 	execute_verifications(&data);
 	// TEST
 	printf("%s\n", data.textures.no);
