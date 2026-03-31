@@ -44,6 +44,7 @@ void			init_textures(t_ptex *text);
 // src/errors
 // exit_errors.c
 void			exit_error(t_data *data, char *msg, int f);
+void    		put_error(char *msg);
 
 // src/map
 // parse_cub_identifiers.c

@@ -9,3 +9,14 @@ void    load_color(t_data *data, t_game *game)
     game->ceiling.g = data->textures.cc[1];
     game->ceiling.b = data->textures.cc[2];
 }
+
+int load_map(t_data *data, t_game *game)
+{
+    game->map.grid = ft_vetor_dup(data->map);
+    if(!game->map.grid)
+    {
+        put_error("failure to load the map");
+        return (FALSE);
+    }
+    return (TRUE);
+}
