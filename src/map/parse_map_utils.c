@@ -6,13 +6,13 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/27 20:25:42 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/30 12:05:20 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/31 20:38:23 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube3d.h"
 
-static int	ft_strlen_n(char *str)
+int	ft_strlen_n(char *str)
 {
 	int	i;
 
@@ -32,18 +32,47 @@ void	alloc_map_line(t_data *data, int i, int y)
 	}
 }
 
-int	copy_map_line(t_data *data, char *line, int y)
+int	find_longest_line(t_data *data)
+{
+	char *line;
+	int fd;
+	int len;
+	int get_len;
+	
+	cub_open(data, &fd, data->file);
+	line = skip_to_map_start(fd);
+	if (is_empty_line(line))
+	{
+		free(line);
+		line = ft_gnl(fd);
+	}
+	len = 0;
+	get_len = 0;
+	while (line && !is_empty_line(line))
+	{
+		get_len = ft_strlen_n(line);
+		if (len < get_len)
+			len = get_len;
+		free(line);
+		line = ft_gnl(fd);	
+	}
+	close(fd);
+	return (len);
+}
+
+int	copy_map_line(t_data *data, char *line, int y, int bigest_len)
 {
 	int	i;
 
-	i = ft_strlen_n(line);
-	alloc_map_line(data, i, y);
+	alloc_map_line(data, bigest_len, y);
 	i = 0;
 	while (line[i] && line[i] != '\n')
 	{
 		data->map[y][i] = line[i];
 		i++;
 	}
+	while (i < bigest_len)
+		data->map[y][i++] = ' ';
 	data->map[y][i] = '\0';
 	return (1);
 }

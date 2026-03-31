@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 19:28:15 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/27 12:31:01 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/31 17:22:36 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,22 @@ int	if_not_line_identifier_parse(t_data *data, char *line, char *orig, int fd)
 		return (0);
 	}
 	return (1);
+}
+
+char *ft_strdup_n(char *line)
+{
+	char *new;
+	int i;
+	
+	new = malloc(sizeof(char) * (ft_strlen_n(line) + 1));
+	if (!new)
+		return (NULL);
+	i = 0;
+	while (line[i] && line[i] != '\n')
+	{
+		new[i] = line[i];
+		i++;
+	}
+	new[i] = '\0';
+	return (new);
 }

@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 12:07:05 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/30 16:06:51 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/31 21:11:38 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int is_valid_map_tile(char c)
 {
-    if (c == '1' || c == '0' || c == 'N' || c == 'S' || c == 'W' || c == 'E')
+    if (c == '1' || c == '0' || c == 'N' || c == 'S' || c == 'W' || c == 'E' || ft_isspace(c))
         return (1);
     else
         return (0);
@@ -88,7 +88,21 @@ int verify_top_bottom_lines(t_data *d)
     return (1);
 }
 
-/* void    flood_fill(t_data *data)
+void    flood_fill(t_data *data, int row, int col)
 {
-    
-} */
+    char c;
+
+    if (row < 0 || row >= data->map_max_rows || col < 0 || col >= data->map_max_col)
+        exit_error(data, "The map is not closed\n", 0);
+    c = data->map_copy[row][col];
+    if (c == ' ')
+        exit_error(data, "The map is not closed\n", 0);
+    if (c == '1' || c == 'F')
+        return ;
+    if (c == '0' || c == 'N' || c == 'S' || c == 'E' || c == 'W')
+        data->map_copy[row][col] = 'F';
+    flood_fill(data, row + 1, col);
+    flood_fill(data, row - 1, col);
+    flood_fill(data, row, col + 1);
+    flood_fill(data, row, col - 1);
+}

@@ -6,115 +6,117 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 12:37:13 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/30 16:11:44 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/03/31 20:23:26 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "cube3d.h"
+#include "cube3d.h"
 
-int is_identifier_line(char *line)
+int	is_identifier_line(char *line)
 {
-    
-    if (!line)
-        return (0);
-    if (!ft_strncmp(line, "NO ", 3))
-        return (1);
-    if (!ft_strncmp(line, "SO ", 3))
-        return (1);
-    if (!ft_strncmp(line, "WE ", 3))
-        return (1);
-    if (!ft_strncmp(line, "EA ", 3))
-        return (1);
-    if (!ft_strncmp(line, "F ", 2))
-        return (1);
-    if (!ft_strncmp(line, "C ", 2))
-        return (1);
-    return (0);
+	if (!line)
+		return (0);
+	if (!ft_strncmp(line, "NO ", 3))
+		return (1);
+	if (!ft_strncmp(line, "SO ", 3))
+		return (1);
+	if (!ft_strncmp(line, "WE ", 3))
+		return (1);
+	if (!ft_strncmp(line, "EA ", 3))
+		return (1);
+	if (!ft_strncmp(line, "F ", 2))
+		return (1);
+	if (!ft_strncmp(line, "C ", 2))
+		return (1);
+	return (0);
 }
 
-void map_count_lines(t_data *data, int fd)
+void	map_count_lines(t_data *data, int fd)
 {
-    char *line;
-    int count;
-    
-    count = 0;
-    line = ft_gnl(fd);
-    while (line && is_empty_line(line))
-    {
-        free(line);
-        line = ft_gnl(fd);
-    }
-    while (line)
-    {
-        if (!is_empty_line(line))
-            count++;
-        free(line);
-        line = ft_gnl(fd);
-    }
-    data->num_lines = count;
+	char	*line;
+	int		count;
+
+	count = 0;
+	line = ft_gnl(fd);
+	while (line && is_empty_line(line))
+	{
+		free(line);
+		line = ft_gnl(fd);
+	}
+	while (line)
+	{
+		if (!is_empty_line(line))
+			count++;
+		free(line);
+		line = ft_gnl(fd);
+	}
+	data->num_lines = count;
 }
 
-char *skip_to_map_start(int fd)
+char	*skip_to_map_start(int fd)
 {
-    char *tmp;
-    char *line;
+	char	*tmp;
+	char	*line;
 
-    line = ft_gnl(fd);
-    while (line)
-    {
-        tmp = trim_lead(line);
-        if (is_empty_line(tmp))
-        {
-            free(line);
-            line = ft_gnl(fd);
-            continue ;
-        }
-        if (is_identifier_line(tmp))
-        {
-            free(line);
-            line = ft_gnl(fd);
-            continue ;   
-        }
-        return (line);
-    }
-    return (NULL);
+	line = ft_gnl(fd);
+	while (line)
+	{
+		tmp = trim_lead(line);
+		if (is_empty_line(tmp))
+		{
+			free(line);
+			line = ft_gnl(fd);
+			continue ;
+		}
+		if (is_identifier_line(tmp))
+		{
+			free(line);
+			line = ft_gnl(fd);
+			continue ;
+		}
+		return (line);
+	}
+	return (NULL);
 }
 
-int create_parse_map(t_data *data)
+int	create_parse_map(t_data *data)
 {
-    char *line;
-    int y;
-    int fd;
+	char	*line;
+	int		y;
+	int		fd;
 
-    cub_open(data, &fd, data->file);
-    data->map = malloc(sizeof(char *) * (data->num_lines + 1));
-    if (!data->map)
-        return (0);
-    line = skip_to_map_start(fd);
-    if (is_empty_line(line))
-    {
-        free(line);
-        line = ft_gnl(fd);
-    }
-    y = 0;
-    while (line && !is_empty_line(line))
-    {
-        copy_map_line(data, line, y++);
-        free(line);
-        line = ft_gnl(fd);
-    }
-    int i = 0;
-    while (data->map[i])
-        printf("%s\n", data->map[i++]);
-    return (1);
+	cub_open(data, &fd, data->file);
+	data->map_max_col = find_longest_line(data);
+	data->map = malloc(sizeof(char *) * (data->num_lines + 1));
+	if (!data->map)
+		return (0);
+	line = skip_to_map_start(fd);
+	if (is_empty_line(line))
+	{
+		free(line);
+		line = ft_gnl(fd);
+	}
+	y = 0;
+	while (line && !is_empty_line(line))
+	{
+		copy_map_line(data, line, y++, data->map_max_col);
+		free(line);
+		line = ft_gnl(fd);
+	}
+	return (1);
 }
 
-void parse_map(t_data *data, int fd)
+void	parse_map(t_data *data, int fd)
 {
-    create_parse_map(data);
-    if (!verify_map_cluster(data) || !verify_line_borders(data) || !verify_top_bottom_lines(data))
-    {
-        close(fd);
-        exit_error(data, "Map is invalid\n", 0);
-    }
+	create_parse_map(data);
+	if (!verify_map_cluster(data) || !verify_line_borders(data)
+		|| !verify_top_bottom_lines(data))
+	{
+		close(fd);
+		exit_error(data, "Map is invalid\n", 0);
+	}
+	data->map_max_rows = ft_size_vetor(data->map);
+	locate_player(data);
+	data->map_copy = ft_vetor_dup(data->map);
+	flood_fill(data, data->game.player.dir_y, data->game.player.dir_x);
 }
