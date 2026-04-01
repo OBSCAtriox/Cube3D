@@ -27,13 +27,18 @@ typedef struct s_data
 {
 	char	*file;
 	char	**map;
+	char	**map_copy;
+	int		map_max_col;
+	int		map_max_rows;
 	int		num_lines;
 	void	*mlx;
 	void	*win;
 	int		fd_check;
 	int		fd_load;
 	char	*flag_texture[5];
+	char	p_looking_dir;
 	t_ptex	textures;
+	t_game	game;
 }			t_data;
 
 // src/inits
@@ -42,6 +47,9 @@ void		init_data(t_data *data);
 void		init_textures(t_ptex *text);
 int 		inits(t_data *data, t_game *game);
 void    	init_struct(t_game *game, t_data *data);
+
+// inits_game.c
+void    init_struct(t_game *game, t_data *data);
 
 // src/errors
 // exit_errors.c
@@ -58,6 +66,7 @@ int			line_identifier_parse(t_data *data, char *line);
 int			parse_identifiers(t_data *data, int fd);
 
 // parse_cub_identifiers_utils.c
+char *ft_strdup_n(char *line);
 int			is_empty_line(char *line);
 int			if_not_line_identifier_parse(t_data *data, char *line, char *orig,
 				int fd);
@@ -67,17 +76,23 @@ int			is_identifier_line(char *line);
 char		*skip_to_map_start(int fd);
 void		map_count_lines(t_data *data, int fd);
 int			create_parse_map(t_data *data);
+void	parse_map(t_data *data, int fd);
 
 // parse_map_utils.c
-void    	alloc_map_line(t_data *data, int i, int y);
-int 		copy_map_line(t_data *data, char *line, int y);
+int	ft_strlen_n(char *str);
+int	find_longest_line(t_data *data);
+void    alloc_map_line(t_data *data, int i, int y);
+int copy_map_line(t_data *data, char *line, int y, int bigest_len);
 
 // parse_map_lines.c
-int 		is_valid_map_tile(char c);
-int 		verify_map_cluster(t_data *d);
-int			verify_line_borders(t_data *d);
-int 		verify_top_bottom_lines(t_data *d);
-void 		parse_map(t_data *data, int fd);
+int is_valid_map_tile(char c);
+int verify_map_cluster(t_data *d);
+int	verify_line_borders(t_data *d);
+int verify_top_bottom_lines(t_data *d);
+void    flood_fill(t_data *data, int row, int col);
+
+// parse_map_player.c
+void	locate_player(t_data *d);
 
 // open_utils
 // open.c
