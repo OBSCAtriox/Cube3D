@@ -106,5 +106,5 @@ void	parse_map(t_data *data, int fd)
 	data->map_max_rows = ft_size_vetor(data->map);
 	locate_player(data);
 	data->map_copy = ft_vetor_dup(data->map);
-	flood_fill(data, data->game.player.dir_y, data->game.player.dir_x);
+	flood_fill(data, data->game->player.dir_y, data->game->player.dir_x);
 }

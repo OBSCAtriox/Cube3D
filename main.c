@@ -7,6 +7,7 @@ int	main(int argc, char *argv[])
 	int		fd;
 
 	fd = 0;
+	data.game = &game;
 	if (argc != 2)
 		exit_error(&data, "Invalid number of arguments\n", 0);
 	if(!inits(&data, &game))

@@ -38,7 +38,7 @@ typedef struct s_data
 	char	*flag_texture[5];
 	char	p_looking_dir;
 	t_ptex	textures;
-	t_game	game;
+	t_game	*game;
 }			t_data;
 
 // src/inits
