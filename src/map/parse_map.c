@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   parse_map.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/17 12:37:13 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/03/30 16:11:44 by tide-pau         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 # include "cube3d.h"
 
 int is_identifier_line(char *line)
@@ -97,16 +85,14 @@ int create_parse_map(t_data *data)
         line = ft_gnl(fd);
     }
     y = 0;
-    while (line && !is_empty_line(line))
-    {
-        copy_map_line(data, line, y++);
-        free(line);
-        line = ft_gnl(fd);
-    }
-    int i = 0;
-    while (data->map[i])
-        printf("%s\n", data->map[i++]);
-    return (1);
+	while (line && !is_empty_line(line))
+	{
+		copy_map_line(data, line, y++);
+		free(line);
+		line = ft_gnl(fd);
+	}
+	data->map[y] = NULL;
+	return (1);
 }
 
 void parse_map(t_data *data, int fd)

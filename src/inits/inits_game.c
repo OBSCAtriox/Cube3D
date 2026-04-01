@@ -1,5 +1,18 @@
 #include "../../includes/cube3d.h"
 
+int inits(t_data *data, t_game *game)
+{
+    init_data(data);
+    init_struct(game, data);
+    game->mlx = mlx_init();
+    if(!game->mlx)
+    {
+        put_error("failure to init mlx\n");
+        return (FALSE);
+    }
+    return (TRUE);
+}
+
 void    init_struct(t_game *game, t_data *data)
 {
     game->mlx = NULL;

@@ -4,16 +4,20 @@ static char  *cat_path_texture(char *prt)
 {
     int i;
     int j;
+    int end;
     char *path;
 
     i = 0;
     j = 0;
     while(ft_isspace(prt[i]))
         i++;
-    path = malloc((ft_strlen(&prt[i]) + 1) * sizeof(char));
+    end = ft_strlen(&prt[i]);
+    while (end > 0 && ft_isspace(prt[i + end - 1]))
+        end--;
+    path = malloc((end + 1) * sizeof(char));
     if(!path)
         return (NULL);
-    while(prt[i] && prt[i] != '\n')
+    while(j < end)
     {
         path[j] = prt[i];
         j++;
@@ -42,13 +46,25 @@ static t_texture    *get_slot_texture(t_game *game, char *flag)
 static int  upload_texture(t_game *game, char *flag, char *path)
 {
     t_texture *slot;
+    int       fd;
 
     slot = get_slot_texture(game, flag);
     if(!slot)
         return (FALSE);
+    fd = open(path, O_RDONLY);
+    if (fd < 0)
+    {
+        perror(path);
+        return (FALSE);
+    }
+    close(fd);
     slot->img.img_ptr = mlx_xpm_file_to_image(game->mlx, path, &slot->width, &slot->height);
     if(!slot->img.img_ptr)
+    {
+        put_error(path);
+        put_error("\nmlx_xpm_file_to_image failed\n");
         return (FALSE);
+    }
     slot->img.addr = mlx_get_data_addr(slot->img.img_ptr, &slot->img.bpp, &slot->img.line_len, &slot->img.endian);
     if(!slot->img.addr)
         return (FALSE);
@@ -58,18 +74,20 @@ static int  upload_texture(t_game *game, char *flag, char *path)
 static char *found_path(char *line, t_data data, char **flag)
 {
     int     i;
-    char    *prt;
+    int     start;
     char    *path;
 
+    start = 0;
+    while (line[start] && ft_isspace(line[start]))
+        start++;
     i = 0;
     while (i < 4)
     {
-        prt = ft_memmem(line, ft_strlen(line), data.flag_texture[i], 2);
-        if(prt)
+        if (ft_strncmp(&line[start], data.flag_texture[i], 2) == 0)
         {
-            if(ft_isspace(prt[2]))
+            if(ft_isspace(line[start + 2]))
             {
-                path = cat_path_texture(&prt[2]);
+                path = cat_path_texture(&line[start + 2]);
                 if(!path)
                     return (NULL);
                 *flag = data.flag_texture[i];
@@ -93,19 +111,19 @@ int    load_textures(t_data data, t_game *game)
     {
         line = ft_gnl(data.fd_load);
         if (!line)
-            return (FALSE);
+            return (close(data.fd_load), FALSE);
         path = found_path(line, data, &flag);
         if (path)
         {
             if (!upload_texture(game, flag, path))
             {
-                ft_clean_2(&path, &line);
-                return (FALSE);
+                ft_clean_2((void **)&path, (void **)&line);
+                return (close(data.fd_load), FALSE);
             }
             n_texture++;
             free(path);
         }
         free(line);
     }
-    return (TRUE);
+    return (close(data.fd_load), TRUE);
 }

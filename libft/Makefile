@@ -6,7 +6,7 @@
 #    By: thiago <thiago@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/15 18:08:12 by thde-sou          #+#    #+#              #
-#    Updated: 2026/03/26 19:24:44 by thiago           ###   ########.fr        #
+#    Updated: 2026/03/31 20:32:02 by thiago           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
 ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c ft_gnl.c \
 ft_memdel.c ft_clean_4.c ft_clean_2.c ft_close_fd.c \
-ft_strcmp.c \
+ft_strcmp.c ft_memmem.c\
 
 OBJ = $(SRC:.c=.o)
 

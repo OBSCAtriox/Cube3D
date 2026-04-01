@@ -83,6 +83,8 @@ void				ft_clean_2(void **prt1, void **prt2);
 void				ft_clean_4(void **prt1, void **prt2, void **prt3,
 						void **prt4);
 void				ft_close_fd(int *fd);
+void				*ft_memmem(const void *haystack, size_t haystacklen,
+						const void *needle, size_t needlelen);
 
 /*get_next_line*/
 

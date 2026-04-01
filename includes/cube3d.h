@@ -40,11 +40,13 @@ typedef struct s_data
 // struct_inits.c
 void		init_data(t_data *data);
 void		init_textures(t_ptex *text);
+int 		inits(t_data *data, t_game *game);
+void    	init_struct(t_game *game, t_data *data);
 
 // src/errors
 // exit_errors.c
-void			exit_error(t_data *data, char *msg, int f);
-void    		put_error(char *msg);
+void		exit_error(t_data *data, char *msg, int f);
+void    	put_error(char *msg);
 
 
 // src/map
@@ -67,15 +69,15 @@ void		map_count_lines(t_data *data, int fd);
 int			create_parse_map(t_data *data);
 
 // parse_map_utils.c
-void    alloc_map_line(t_data *data, int i, int y);
-int copy_map_line(t_data *data, char *line, int y);
+void    	alloc_map_line(t_data *data, int i, int y);
+int 		copy_map_line(t_data *data, char *line, int y);
 
 // parse_map_lines.c
-int is_valid_map_tile(char c);
-int verify_map_cluster(t_data *d);
-int	verify_line_borders(t_data *d);
-int verify_top_bottom_lines(t_data *d);
-void parse_map(t_data *data, int fd);
+int 		is_valid_map_tile(char c);
+int 		verify_map_cluster(t_data *d);
+int			verify_line_borders(t_data *d);
+int 		verify_top_bottom_lines(t_data *d);
+void 		parse_map(t_data *data, int fd);
 
 // open_utils
 // open.c
@@ -99,5 +101,9 @@ void		if_textures_alloc_free(t_data *data);
 
 // load .cub
 int			load_textures(t_data data, t_game *game);
+int 		load_components(t_data *data, t_game *game);
+
+//window
+int    open_window(t_game *game);
 
 #endif
