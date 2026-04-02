@@ -29,7 +29,7 @@ int	main(int argc, char *argv[])
 	if (!load_components(&data, &game))
 		exit(EXIT_FAILURE);
 	if_allocated_free(&data);
-	if (!open_window(&game))
+	if(!run_game(&data, &game))
 		exit(EXIT_FAILURE);
 	return (0);
 }

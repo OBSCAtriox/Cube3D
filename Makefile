@@ -17,7 +17,7 @@ src/map/parse_cub_identifiers.c src/map/parse_cub_identifiers_utils.c \
 src/inits/struct_inits.c src/verifications/verify_identifiers.c \
 src/map/parse_map.c src/open_utils/open.c src/map/parse_map_utils.c \
 src/map/parse_map_lines.c src/inits/inits_game.c src/map/load_game.c\
-src/map/load_texture.c src/game/window.c\
+src/map/load_texture.c src/game/window.c src/game/game.c src/game/player.c\
 src/map/parse_map_player.c \
 
 OBJ_DIR = obj
