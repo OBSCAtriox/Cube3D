@@ -47,9 +47,7 @@ void		init_data(t_data *data);
 void		init_textures(t_ptex *text);
 int 		inits(t_data *data, t_game *game);
 void    	init_struct(t_game *game, t_data *data);
-
-// inits_game.c
-void    init_struct(t_game *game, t_data *data);
+int 		init_player(t_data *data, t_game *game);
 
 // src/errors
 // exit_errors.c
@@ -120,5 +118,6 @@ int 		load_components(t_data *data, t_game *game);
 
 //window
 int    open_window(t_game *game);
+int run_game(t_data *data, t_game *game);
 
 #endif
