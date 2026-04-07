@@ -1,7 +1,7 @@
-NO /home/thiago/Cube3D/resources/textures/xpm/north_texture.xpm
-SO /home/thiago/Cube3D/resources/textures/xpm/south_texture.xpm
-WE /home/thiago/Cube3D/resources/textures/xpm/west_texture.xpm
-EA /home/thiago/Cube3D/resources/textures/xpm/east_texture.xpm
+NO resources/textures/xpm/north_texture.xpm
+SO resources/textures/xpm/south_texture.xpm
+WE resources/textures/xpm/west_texture.xpm
+EA resources/textures/xpm/east_texture.xpm
 
 F 220,100,0
 C 225,30,0

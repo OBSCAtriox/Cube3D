@@ -1,6 +1,9 @@
 #ifndef GAME_H
 #define GAME_H
 
+# define WIDTH 1200
+# define HEIGHT 800
+
 typedef struct s_img
 {
 	void	*img_ptr;   // ponteiro da imagem criada pela MLX
@@ -112,6 +115,8 @@ typedef struct s_game
 
 	t_color		floor;          // cor do chão
 	t_color		ceiling;        // cor do teto
+
+	t_ray		ray;
 
 	int			screen_width;   // largura da janela
 	int			screen_height;  // altura da janela
