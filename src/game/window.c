@@ -22,14 +22,13 @@ void render_frame(t_game *game)
         x++;
     }
 
-    mlx_put_image_to_window();
+    //mlx_put_image_to_window();
 }
 
 void cast_ray(t_game *game, int x)
 {
     init_ray(game, x);
-    set_step_and_side_dist(game);
-    perform_dda(game);
+    execute_dda(game);
     calculate_wall_projection(game);
     choose_texture(game);
 }
