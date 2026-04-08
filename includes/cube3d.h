@@ -81,6 +81,7 @@ int	ft_strlen_n(char *str);
 int	find_longest_line(t_data *data);
 void    alloc_map_line(t_data *data, int i, int y);
 int copy_map_line(t_data *data, char *line, int y, int bigest_len);
+void	island_handler(t_data *data);
 
 // parse_map_lines.c
 int is_valid_map_tile(char c);
