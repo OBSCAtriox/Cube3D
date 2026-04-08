@@ -3,6 +3,7 @@
 
 # define WIDTH 1200
 # define HEIGHT 800
+# define TEXTURE_WIDTH 48
 
 typedef struct s_img
 {
@@ -94,7 +95,7 @@ typedef struct s_ray
 	int		draw_end;       // pixel final da parede na coluna
 
 	double	wall_x;        // posição exata onde o raio atingiu a parede
-	int		tex_x;          // coordenada X da textura a ser usada
+	int		tex_x;         // coordenada X da textura a ser usada
 
 	double	step;          // quanto avançar na textura por pixel desenhado
 	double	tex_pos;       // posição inicial na textura

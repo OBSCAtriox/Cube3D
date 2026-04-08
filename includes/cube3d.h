@@ -123,6 +123,7 @@ int run_game(t_data *data, t_game *game);
 // window.c 
 int    open_window(t_game *game);
 void cast_ray(t_game *game, int x);
+t_texture   *get_texture(t_game *game);
 
 // raycast.c
 void    execute_dda(t_game *game);
