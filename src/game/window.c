@@ -11,7 +11,24 @@ int    open_window(t_game *game)
     return (TRUE);
 }
 
-/* int render_frame(t_game *game)
+void render_frame(t_game *game)
 {
-    draw_ceiling_floor();
-} */
+    int x = 0;
+
+    while (x < WIDTH)
+    {
+        cast_ray(game, x);
+        draw_column(game, x);
+        x++;
+    }
+
+    //mlx_put_image_to_window();
+}
+
+void cast_ray(t_game *game, int x)
+{
+    init_ray(game, x);
+    execute_dda(game);
+    calculate_wall_projection(game);
+    choose_texture(game);
+}

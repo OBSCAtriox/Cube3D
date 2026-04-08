@@ -117,8 +117,16 @@ void		if_textures_alloc_free(t_data *data);
 int			load_textures(t_data data, t_game *game);
 int 		load_components(t_data *data, t_game *game);
 
-//window
-int    open_window(t_game *game);
+// game
+// game.c
 int run_game(t_data *data, t_game *game);
+
+// window.c 
+int    open_window(t_game *game);
+void cast_ray(t_game *game, int x);
+
+// raycast.c
+void    execute_dda(t_game *game);
+void init_ray(t_game *game, int x);
 
 #endif
