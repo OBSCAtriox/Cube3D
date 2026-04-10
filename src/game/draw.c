@@ -1,10 +1,5 @@
 # include "cube3d.h"
 
-void    put_pixel(t_img *img, int x, int y, int color)
-{
-
-}
-
 void    draw_ceilling(t_game *game, int x, int *y)
 {
     while (*y < game->ray.draw_start)

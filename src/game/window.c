@@ -32,7 +32,7 @@ int    open_window(t_game *game)
     return (TRUE);
 }
 
-void render_frame(t_game *game)
+void    render_frame(t_game *game)
 {
     int x = 0;
 
@@ -42,14 +42,12 @@ void render_frame(t_game *game)
         draw_column(game, x);
         x++;
     }
-
-    //mlx_put_image_to_window();
+    mlx_put_image_to_window(game->mlx, game->win, game->screen.img_ptr, 0, 0);
 }
 
 void cast_ray(t_game *game, int x)
 {
     init_ray(game, x);
     execute_dda(game);
-    calculate_wall_projection(game);
-    choose_texture(game);
+    calc_wall_projection(game);
 }
