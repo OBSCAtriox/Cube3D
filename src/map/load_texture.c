@@ -62,7 +62,6 @@ static int  upload_texture(t_game *game, char *flag, char *path)
     if(!slot->img.img_ptr)
     {
         put_error(path);
-        put_error("\nmlx_xpm_file_to_image failed\n");
         return (FALSE);
     }
     slot->img.addr = mlx_get_data_addr(slot->img.img_ptr, &slot->img.bpp, &slot->img.line_len, &slot->img.endian);

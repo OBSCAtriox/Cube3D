@@ -116,6 +116,7 @@ void		if_textures_alloc_free(t_data *data);
 // load .cub
 int			load_textures(t_data data, t_game *game);
 int 		load_components(t_data *data, t_game *game);
+int 		load_screen(t_game *game);
 
 // game
 // game.c
@@ -124,9 +125,22 @@ int run_game(t_data *data, t_game *game);
 // window.c 
 int    open_window(t_game *game);
 void cast_ray(t_game *game, int x);
+t_texture   *get_texture(t_game *game);
+void 	render_frame(t_game *game);
 
 // raycast.c
 void    execute_dda(t_game *game);
 void init_ray(t_game *game, int x);
+void    calc_wall_projection(t_game *game);
+
+//draw.c
+void    draw_ceilling(t_game *game, int x, int *y);
+void    draw_wall(t_game *game, int x, int *y);
+void    draw_floor(t_game *game, int x, int *y);
+void    draw_column(t_game *game, int x);
+
+//draw_utils.c
+void    put_pixel(t_img *img, int x, int y, int color);
+int get_texture_pixel(t_texture *tex, int x, int y);
 
 #endif

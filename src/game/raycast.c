@@ -1,5 +1,32 @@
 #include "cube3d.h"
 
+static void calc_wall_collision(t_game *game)
+{
+    double pos_x;
+    double pos_y;
+    double perp_wall_dist;
+    double ray_dir_x;
+    double ray_dir_y;
+    int tex_x;
+
+    pos_x = game->player.pos_x;
+    pos_y = game->player.pos_y;
+    perp_wall_dist = game->ray.perp_wall_dist;
+    ray_dir_x = game->ray.ray_dir_x;
+    ray_dir_y = game->ray.ray_dir_y;
+    if (game->ray.side == 0)
+        game->ray.wall_x = pos_y + perp_wall_dist * ray_dir_y;
+    else
+        game->ray.wall_x = pos_x + perp_wall_dist * ray_dir_x;
+    game->ray.wall_x -= floor(game->ray.wall_x);
+    tex_x = (int)(game->ray.wall_x * TEXTURE_WIDTH);
+    if (game->ray.side == 0 && ray_dir_x > 0)
+        tex_x = TEXTURE_WIDTH - tex_x - 1;
+    if (game->ray.side == 1 && ray_dir_y < 0)
+        tex_x = TEXTURE_WIDTH - tex_x - 1;
+    game->ray.tex_x = tex_x;
+}   
+
 void    calc_wall_projection(t_game *game)
 {
     double side_dist_x;
@@ -12,13 +39,17 @@ void    calc_wall_projection(t_game *game)
     delta_dist_x = game->ray.delta_dist_x;
     delta_dist_y = game->ray.delta_dist_y;
     if (game->ray.side == 0)
-    {
         game->ray.perp_wall_dist = side_dist_x - delta_dist_x;
-    }
     else
-    {
         game->ray.perp_wall_dist = side_dist_y - delta_dist_y;
-    }
+    game->ray.line_height = (int)(HEIGHT / game->ray.perp_wall_dist);
+    game->ray.draw_start = -game->ray.line_height / 2 + HEIGHT / 2;
+    game->ray.draw_end = game->ray.line_height / 2 + HEIGHT / 2;
+    if (game->ray.draw_start < 0)
+        game->ray.draw_start = 0;
+    if (game->ray.draw_end >= HEIGHT)
+        game->ray.draw_end = HEIGHT - 1;
+    calc_wall_collision(game);
 }
 
 void    execute_dda(t_game *game)
@@ -40,7 +71,7 @@ void    execute_dda(t_game *game)
             game->ray.map_y += game->ray.step_y;
             game->ray.side = 1;
         }
-        if (game->map.grid[game->ray.map_y][game->ray.map_x] == 1)
+        if (game->map.grid[game->ray.map_y][game->ray.map_x] == '1')
             hit = 1;
     }
 }

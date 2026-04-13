@@ -15,8 +15,8 @@ static void	locate_player_helper(t_data *d, int y, char *line, int *p_found)
 				exit_error(d, "Map contains more than 1 player\n", 0);
 			else if (*p_found == FALSE)
 			{
-				d->game->player.dir_x = i + 0.5;
-				d->game->player.dir_y = y + 0.5;
+				d->game->player.pos_x = i + 0.5;
+				d->game->player.pos_y = y + 0.5;
                 d->p_looking_dir = c;
 				*p_found = TRUE;
 			}

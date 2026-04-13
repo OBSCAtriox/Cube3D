@@ -6,6 +6,7 @@ int run_game(t_data *data, t_game *game)
         return (FALSE);
     if(!init_player(data, game))
         return (FALSE);
+    render_frame(game);
     mlx_loop(game->mlx);
     return (TRUE);
 }
