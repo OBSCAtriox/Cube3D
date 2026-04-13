@@ -1,11 +1,10 @@
-NO resources/textures/xpm/north_texture.xpm
-SO resources/textures/xpm/south_texture.xpm
-WE resources/textures/xpm/west_texture.xpm
-EA resources/textures/xpm/east_texture.xpm
->>>>>>> origin/thiago
+NO resources/textures/xpm/wood.xpm
+SO resources/textures/xpm/obsi.xpm
+WE resources/textures/xpm/netherrack.xpm
+EA resources/textures/xpm/coble.xpm
 
-F 220,100,0
-C 225,30,0
+C 135,206,235
+F 124,252,0
 
 1111111111111111111111111
 1000000000110000000000001

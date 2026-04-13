@@ -3,7 +3,7 @@
 
 # define WIDTH 1200
 # define HEIGHT 800
-# define TEXTURE_WIDTH 48
+# define TEXTURE_WIDTH 500
 
 # define KEY_W 119
 # define KEY_A 97
