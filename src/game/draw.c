@@ -19,7 +19,7 @@ void    draw_wall(t_game *game, int x, int *y)
 
     texture = get_texture(game);
     line_height = game->ray.line_height;
-    draw_start = -line_height / 2 + HEIGHT / 2;
+    draw_start = game->ray.draw_start;
     while (*y <= game->ray.draw_end)
     {
         tex_y = ((*y - draw_start) * texture->height) / line_height;

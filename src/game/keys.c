@@ -14,6 +14,10 @@ int key_press(int keycode, t_game *game)
         game->keys.left = 1;
     if (keycode == KEY_RIGHT)
         game->keys.right = 1;
+    if (keycode == KEY_UP)
+        game->keys.up = 1;
+    if (keycode == KEY_DOWN)
+        game->keys.down = 1;
     /* if (keycode == ESC)
         close_game(game); */
     return (0);    
@@ -33,6 +37,10 @@ int key_realease(int keycode, t_game *game)
         game->keys.left = 0;
     if (keycode == KEY_RIGHT)
         game->keys.right = 0;
+    if (keycode == KEY_UP)
+        game->keys.up = 0;
+    if (keycode == KEY_DOWN)
+        game->keys.down = 0;
     return (0);
 }
 
@@ -50,4 +58,8 @@ void    update_player(t_game *game)
         rotate_right(game);
     if (game->keys.left)
         rotate_left(game);
+    if (game->keys.up)
+        rotate_up_down(game, 1);
+    if (game->keys.down)
+        rotate_up_down(game, -1);
 }

@@ -9,6 +9,8 @@
 # define KEY_A 97
 # define KEY_S 115
 # define KEY_D 100
+# define KEY_UP 65362
+# define KEY_DOWN 65364
 # define KEY_LEFT 65361
 # define KEY_RIGHT 65363
 # define ESC 65307
@@ -40,6 +42,7 @@ typedef struct s_player
 	double	dir_y;      // direção atual que o jogador está olhando (Y)
 	double	plane_x;    // plano da câmera (eixo X) — define largura do campo de visão
 	double	plane_y;    // plano da câmera (eixo Y) — usado para gerar os raios
+	double	pitch;
 }	t_player;
 
 typedef struct s_map
@@ -56,6 +59,8 @@ typedef struct s_keys
 	int	s;          // tecla S pressionada (andar para trás)
 	int	d;          // tecla D pressionada (andar para direita)
 
+	int	up;
+	int down;
 	int	left;       // seta esquerda pressionada (rotacionar esquerda)
 	int	right;      // seta direita pressionada (rotacionar direita)
 }	t_keys;

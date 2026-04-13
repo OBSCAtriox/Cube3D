@@ -33,3 +33,8 @@ void    rotate_right(t_game *game)
     game->player.plane_y = old_plane_x * sin(ROT_SPEED)
         + game->player.plane_y * cos(ROT_SPEED);
 }
+
+void    rotate_up_down(t_game *game, int dir)
+{
+    game->player.pitch += dir * (ROT_SPEED * 100);
+}
