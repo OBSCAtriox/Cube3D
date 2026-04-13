@@ -87,7 +87,7 @@ static void    calc_step_side_dist(t_game *game)
     else
     {
         game->ray.step_x = 1;
-        game->ray.side_dist_x = (game->player.pos_x + 1.0 - game->ray.map_x) * \
+        game->ray.side_dist_x = (game->ray.map_x + 1.0 - game->player.pos_x) * \
         game->ray.delta_dist_x;
     }
     if (game->ray.ray_dir_y < 0)
@@ -99,7 +99,7 @@ static void    calc_step_side_dist(t_game *game)
     else
     {
         game->ray.step_y = 1;
-        game->ray.side_dist_y = (game->player.pos_y + 1.0 - game->ray.map_y) * \
+        game->ray.side_dist_y = (game->ray.map_y + 1.0 - game->player.pos_y) * \
         game->ray.delta_dist_y;
     }
 }

@@ -19,9 +19,12 @@ src/map/parse_map.c src/open_utils/open.c src/map/parse_map_utils.c \
 src/map/parse_map_lines.c src/inits/inits_game.c src/map/load_game.c\
 src/map/load_texture.c src/game/window.c src/game/game.c src/game/player.c\
 src/map/parse_map_player.c src/game/raycast.c src/game/draw.c src/game/draw_utils.c\
+src/game/keys.c src/game/move.c src/game/rotate.c\
 
 OBJ_DIR = obj
 OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)
+
+$(OBJ_DIR)/src/game/game.o: FLAGS += -Wno-cast-function-type
 
 all: $(LIBFT) $(MLX_LIB) $(NAME)
 

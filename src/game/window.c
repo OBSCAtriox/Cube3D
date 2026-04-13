@@ -36,6 +36,7 @@ void    render_frame(t_game *game)
 {
     int x = 0;
 
+    ft_memset(game->screen.addr, 0, game->screen.line_len * HEIGHT);
     while (x < WIDTH)
     {
         cast_ray(game, x);
