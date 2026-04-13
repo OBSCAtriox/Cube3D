@@ -17,7 +17,8 @@ static void	locate_player_helper(t_data *d, int y, char *line, int *p_found)
 			{
 				d->game->player.pos_x = i + 0.5;
 				d->game->player.pos_y = y + 0.5;
-                d->p_looking_dir = c;
+				d->p_looking_dir = c;
+				d->map[y][i] = '0';
 				*p_found = TRUE;
 			}
 		}

@@ -120,6 +120,7 @@ int 		load_screen(t_game *game);
 // game
 // game.c
 int run_game(t_data *data, t_game *game);
+int game_loop(t_game *game);
 
 // window.c 
 int    open_window(t_game *game);
@@ -141,5 +142,20 @@ void    draw_column(t_game *game, int x);
 //draw_utils.c
 void    put_pixel(t_img *img, int x, int y, int color);
 int get_texture_pixel(t_texture *tex, int x, int y);
+
+//keys.c
+int key_press(int keycode, t_game *game);
+int key_realease(int keycode, t_game *game);
+void    update_player(t_game *game);
+
+//move.c
+void    move_forward(t_game *game);
+void    move_backward(t_game *game);
+void    move_right(t_game *game);
+void    move_left(t_game *game);
+
+//rotate.c
+void    rotate_right(t_game *game);
+void    rotate_left(t_game *game);
 
 #endif

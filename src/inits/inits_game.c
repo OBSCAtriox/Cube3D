@@ -28,6 +28,7 @@ void    init_struct(t_game *game, t_data *data)
     game->tex.east.img.addr = NULL;
     game->tex.west.img.img_ptr = NULL;
     game->tex.west.img.addr = NULL;
+    ft_memset(&game->keys, 0, sizeof(game->keys));
     data->flag_texture[0] = "NO";
     data->flag_texture[1] = "SO";
     data->flag_texture[2] = "WE";

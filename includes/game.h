@@ -5,6 +5,17 @@
 # define HEIGHT 800
 # define TEXTURE_WIDTH 48
 
+# define KEY_W 119
+# define KEY_A 97
+# define KEY_S 115
+# define KEY_D 100
+# define KEY_LEFT 65361
+# define KEY_RIGHT 65363
+# define ESC 65307
+
+# define SPEED 0.1
+# define ROT_SPEED 0.05
+
 typedef struct s_img
 {
 	void	*img_ptr;   // ponteiro da imagem criada pela MLX
