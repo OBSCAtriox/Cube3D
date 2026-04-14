@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: thiago <thiago@student.42.fr>              +#+  +:+       +#+         #
+#    By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/15 18:08:12 by thde-sou          #+#    #+#              #
-#    Updated: 2026/03/31 20:32:02 by thiago           ###   ########.fr        #
+#    Updated: 2026/04/14 17:51:55 by tide-pau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,14 +41,14 @@ $(NAME): $(OBJ)
 
 %.o: %.c
 	@echo -e "📚$(FGCYAN)Libft Object Compilation Sucessfull📚"
-	$(CC) $(FLAGS) -c $< -o $@
+	@$(CC) $(FLAGS) -c $< -o $@
 	@echo -e "$(RESET)"
 
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
