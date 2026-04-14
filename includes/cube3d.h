@@ -160,4 +160,7 @@ void    rotate_right(t_game *game);
 void    rotate_left(t_game *game);
 void    rotate_up_down(t_game *game, int dir);
 
+//close.c
+void    close_game(t_game *game);
+
 #endif

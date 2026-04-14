@@ -18,8 +18,8 @@ int key_press(int keycode, t_game *game)
         game->keys.up = 1;
     if (keycode == KEY_DOWN)
         game->keys.down = 1;
-    /* if (keycode == ESC)
-        close_game(game); */
+    if (keycode == ESC)
+        close_game(game);
     return (0);    
 }
 
