@@ -13,7 +13,7 @@
 # define KEY_RIGHT 65363
 # define ESC 65307
 
-# define SPEED 0.1
+# define SPEED 0.07
 # define ROT_SPEED 0.05
 
 typedef struct s_img
