@@ -108,4 +108,5 @@ void	parse_map(t_data *data, int fd)
 	data->map_copy = ft_vetor_dup(data->map);
 	flood_fill(data, data->game->player.pos_y, data->game->player.pos_x);
 	island_handler(data);
+	ft_free_vector(&data->map_copy);
 }

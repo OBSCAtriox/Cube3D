@@ -31,8 +31,6 @@ typedef struct s_data
 	int		map_max_col;
 	int		map_max_rows;
 	int		num_lines;
-	void	*mlx;
-	void	*win;
 	int		fd_check;
 	int		fd_load;
 	char	*flag_texture[5];
