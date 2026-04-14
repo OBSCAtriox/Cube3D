@@ -1,20 +1,23 @@
 #ifndef GAME_H
 #define GAME_H
 
-# define WIDTH 1200
-# define HEIGHT 800
-# define TEXTURE_WIDTH 48
+# define WIDTH 1920
+# define HEIGHT 960
+# define TEXTURE_WIDTH 500
 
 # define KEY_W 119
 # define KEY_A 97
 # define KEY_S 115
 # define KEY_D 100
+# define KEY_UP 65362
+# define KEY_DOWN 65364
 # define KEY_LEFT 65361
 # define KEY_RIGHT 65363
 # define ESC 65307
 
 # define SPEED 0.07
 # define ROT_SPEED 0.05
+# define ROT_SPEED_UP_DOWN ROT_SPEED * 400
 
 typedef struct s_img
 {
@@ -40,6 +43,7 @@ typedef struct s_player
 	double	dir_y;      // direção atual que o jogador está olhando (Y)
 	double	plane_x;    // plano da câmera (eixo X) — define largura do campo de visão
 	double	plane_y;    // plano da câmera (eixo Y) — usado para gerar os raios
+	double	pitch;
 }	t_player;
 
 typedef struct s_map
@@ -56,6 +60,8 @@ typedef struct s_keys
 	int	s;          // tecla S pressionada (andar para trás)
 	int	d;          // tecla D pressionada (andar para direita)
 
+	int	up;
+	int down;
 	int	left;       // seta esquerda pressionada (rotacionar esquerda)
 	int	right;      // seta direita pressionada (rotacionar direita)
 }	t_keys;

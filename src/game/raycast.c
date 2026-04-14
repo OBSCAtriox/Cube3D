@@ -43,12 +43,8 @@ void    calc_wall_projection(t_game *game)
     else
         game->ray.perp_wall_dist = side_dist_y - delta_dist_y;
     game->ray.line_height = (int)(HEIGHT / game->ray.perp_wall_dist);
-    game->ray.draw_start = -game->ray.line_height / 2 + HEIGHT / 2;
-    game->ray.draw_end = game->ray.line_height / 2 + HEIGHT / 2;
-    if (game->ray.draw_start < 0)
-        game->ray.draw_start = 0;
-    if (game->ray.draw_end >= HEIGHT)
-        game->ray.draw_end = HEIGHT - 1;
+    game->ray.draw_start = -game->ray.line_height / 2 + HEIGHT / 2 + game->player.pitch;
+    game->ray.draw_end = game->ray.line_height / 2 + HEIGHT / 2 + game->player.pitch;
     calc_wall_collision(game);
 }
 

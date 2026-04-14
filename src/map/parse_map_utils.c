@@ -64,3 +64,25 @@ int	copy_map_line(t_data *data, char *line, int y, int bigest_len)
 	data->map[y][i] = '\0';
 	return (1);
 }
+
+void	island_handler(t_data *data)
+{
+	int i;
+	int y;
+
+	y = 0;
+	while (data->map_copy[y])
+	{
+		i = 0;
+		while (data->map_copy[y][i])
+		{
+			if (data->map_copy[y][i] == '0')
+			{
+				flood_fill(data, y, i);
+				i = 0;
+			}
+			i++;
+		}
+		y++;
+	}
+}
