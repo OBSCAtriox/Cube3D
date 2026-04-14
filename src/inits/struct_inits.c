@@ -2,6 +2,7 @@
 
 void	init_textures(t_ptex *text)
 {
+	ft_memset(text, 0, sizeof(*text));
 	text->no = NULL;
 	text->so = NULL;
 	text->we = NULL;
@@ -10,6 +11,7 @@ void	init_textures(t_ptex *text)
 
 void	init_data(t_data *data)
 {
+	ft_memset(data, 0, sizeof(*data));
 	data->file = NULL;
 	data->map = NULL;
 	data->map_copy = NULL;

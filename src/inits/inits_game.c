@@ -15,6 +15,7 @@ int inits(t_data *data, t_game *game)
 
 void    init_struct(t_game *game)
 {
+    ft_memset(game, 0, sizeof(*game));
     game->mlx = NULL;
     game->win = NULL;
     game->screen.img_ptr = NULL;
