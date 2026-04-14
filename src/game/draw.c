@@ -1,8 +1,25 @@
 # include "cube3d.h"
 
+static  void draw_wall_calcs(t_game *game, t_texture *texture, double sest[4])
+{
+    sest[0] = (int)game->ray.draw_start;
+    sest[1] = (int)game->ray.draw_end;
+    if (sest[0] < 0)
+        sest[0] = 0;
+    if (sest[1] >= HEIGHT)
+        sest[1] = HEIGHT - 1;
+    sest[2] = (double)texture->height / game->ray.line_height;
+    sest[3] = (sest[0] - game->ray.draw_start) * sest[2];
+}
+
 void    draw_ceilling(t_game *game, int x, int *y)
 {
-    while (*y < game->ray.draw_start)
+    int end;
+
+    end = game->ray.draw_start;
+    if (end > HEIGHT)
+        end = HEIGHT;
+    while (*y < end)
     {
         put_pixel(&game->screen, x, *y, game->ceiling.value);
         (*y)++;
@@ -11,18 +28,17 @@ void    draw_ceilling(t_game *game, int x, int *y)
 
 void    draw_wall(t_game *game, int x, int *y)
 {
-    double      draw_start;
-    double      line_height;
     int         color;
     int         tex_y;
     t_texture   *texture;
+    double sest[4];
 
     texture = get_texture(game);
-    line_height = game->ray.line_height;
-    draw_start = game->ray.draw_start;
-    while (*y <= game->ray.draw_end)
+    draw_wall_calcs(game, texture, sest);
+    while (*y <= sest[1])
     {
-        tex_y = ((*y - draw_start) * texture->height) / line_height;
+        tex_y = (int)sest[3];
+        sest[3] += sest[2];
         if (tex_y < 0)
             tex_y = 0;
         if (tex_y >= texture->height)

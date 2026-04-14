@@ -36,5 +36,9 @@ void    rotate_right(t_game *game)
 
 void    rotate_up_down(t_game *game, int dir)
 {
-    game->player.pitch += dir * (ROT_SPEED * 100);
+    game->player.pitch += dir * ROT_SPEED_UP_DOWN;
+    if (game->player.pitch > HEIGHT)
+        game->player.pitch = HEIGHT;
+    if (game->player.pitch < -HEIGHT)
+        game->player.pitch = -HEIGHT;
 }
