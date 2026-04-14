@@ -3,7 +3,7 @@
 int inits(t_data *data, t_game *game)
 {
     init_data(data);
-    init_struct(game, data);
+    init_struct(game);
     game->mlx = mlx_init();
     if(!game->mlx)
     {
@@ -13,7 +13,7 @@ int inits(t_data *data, t_game *game)
     return (TRUE);
 }
 
-void    init_struct(t_game *game, t_data *data)
+void    init_struct(t_game *game)
 {
     game->mlx = NULL;
     game->win = NULL;
@@ -29,9 +29,4 @@ void    init_struct(t_game *game, t_data *data)
     game->tex.west.img.img_ptr = NULL;
     game->tex.west.img.addr = NULL;
     ft_memset(&game->keys, 0, sizeof(game->keys));
-    data->flag_texture[0] = "NO";
-    data->flag_texture[1] = "SO";
-    data->flag_texture[2] = "WE";
-    data->flag_texture[3] = "EA";
-    data->flag_texture[4] = NULL;
 }

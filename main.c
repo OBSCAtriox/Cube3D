@@ -7,11 +7,14 @@ int	main(int argc, char *argv[])
 	int		fd;
 
 	fd = 0;
-	data.game = &game;
 	if (argc != 2)
-		exit_error(&data, "Invalid number of arguments\n", 0);
+	{
+		put_error("Invalid number of arguments");
+		exit(EXIT_FAILURE);
+	}
 	if(!inits(&data, &game))
 		exit(EXIT_FAILURE);
+	data.game = &game;
 	data.file = ft_strdup(argv[1]);
 	if (verify_file_extension(data.file))
 		exit_error(&data, "File is Invalid\n", 0);

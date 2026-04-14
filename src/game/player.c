@@ -18,6 +18,7 @@ static int    define_pos_player_NS(t_data *data, t_game *game)
         game->player.plane_y = 0;
         return (TRUE);
     }
+    game->player.pitch = 0;
     return (FALSE);
 }
 

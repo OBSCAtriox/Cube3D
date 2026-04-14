@@ -44,7 +44,7 @@ typedef struct s_data
 void		init_data(t_data *data);
 void		init_textures(t_ptex *text);
 int 		inits(t_data *data, t_game *game);
-void    	init_struct(t_game *game, t_data *data);
+void    	init_struct(t_game *game);
 int 		init_player(t_data *data, t_game *game);
 
 // src/errors
