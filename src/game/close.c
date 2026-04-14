@@ -10,6 +10,7 @@ void    close_game(t_game *game)
     mlx_destroy_image(game->mlx, game->tex.west.img.img_ptr);
     mlx_destroy_window(game->mlx, game->win);
     mlx_destroy_display(game->mlx);
+    free(game->mlx);
     ft_free_vector(&game->map.grid);
     exit(EXIT_SUCCESS);
 }

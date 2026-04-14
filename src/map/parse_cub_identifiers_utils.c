@@ -41,3 +41,10 @@ char *ft_strdup_n(char *line)
 	new[i] = '\0';
 	return (new);
 }
+
+void	free_if_line(t_data *data, char *line, int y)
+{
+	if (line)
+		free(line);
+	data->map[y] = NULL;
+}

@@ -66,6 +66,7 @@ char *ft_strdup_n(char *line);
 int			is_empty_line(char *line);
 int			if_not_line_identifier_parse(t_data *data, char *line, char *orig,
 				int fd);
+void	free_if_line(t_data *data, char *line, int y);
 
 // parse_map.c
 int			is_identifier_line(char *line);

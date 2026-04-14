@@ -77,7 +77,8 @@ int	create_parse_map(t_data *data)
 	data->map_max_col = find_longest_line(data);
 	data->map = malloc(sizeof(char *) * (data->num_lines + 1));
 	if (!data->map)
-		return (0);
+		return (close(fd), 0);
+	ft_memset(data->map, 0, sizeof(char *) * (data->num_lines + 1));
 	line = skip_to_map_start(fd);
 	if (is_empty_line(line))
 	{
@@ -91,7 +92,8 @@ int	create_parse_map(t_data *data)
 		free(line);
 		line = ft_gnl(fd);
 	}
-	return (1);
+	free_if_line(data, line, y);
+	return (close(fd), 1);
 }
 
 void	parse_map(t_data *data, int fd)

@@ -29,11 +29,11 @@ $(OBJ_DIR)/src/game/game.o: FLAGS += -Wno-cast-function-type
 all: $(LIBFT) $(MLX_LIB) $(NAME)
 
 $(NAME): $(OBJ)
-	@$(CC) $(FLAGS) $(OBJ) $(LIBFT) $(LIBS) -o $(NAME)
+	$(CC) $(FLAGS) $(OBJ) $(LIBFT) $(LIBS) -o $(NAME)
 
 $(LIBFT):
 	@$(MAKE) -C $(LIBFT_DIR) all
-	@echo -e "📚$(FGCYAN)Libft Compilation Sucessfull$(RESET)📚"
+	echo -e "📚$(FGCYAN)Libft Compilation Sucessfull$(RESET)📚"
 
 $(MLX_LIB):
 	@$(MAKE) -C $(MLX_DIR)
@@ -41,18 +41,18 @@ $(MLX_LIB):
 $(OBJ_DIR)/%.o: %.c
 	@mkdir -p $(dir $@)
 	@echo -e "✨$(FGYELLOW)Object Compilation Sucessfull✨"
-	@$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 	@echo -e "$(RESET)"
 
 clean:
-	@rm -f $(OBJ)
+	rm -f $(OBJ)
 	@echo -e "$(FGRED)"
 	@$(MAKE) -C $(LIBFT_DIR) clean
 	@$(MAKE) -C $(MLX_DIR) clean
 	@echo -e "$(RESET)"
 
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 	@echo -e "$(FGRED)"
 	@$(MAKE) -C $(LIBFT_DIR) fclean
 	@echo -e "$(RESET)"
