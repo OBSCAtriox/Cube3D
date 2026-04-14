@@ -1,7 +1,7 @@
 include includes/colors.mk
 
 CC = cc
-FLAGS = -Wall -Werror -Wextra -Iincludes
+FLAGS = -O3 -Wall -Werror -Wextra -Iincludes
 
 NAME = cub3d
 

@@ -26,9 +26,6 @@ int	main(int argc, char *argv[])
 	parse_map(&data, fd);
 	close(fd);
 	execute_verifications(&data);
-	int i;
-	while (data.map[i])
-		printf("%s\n", data.map[i++]);
 	if (!load_components(&data, &game))
 		exit(EXIT_FAILURE);
 	if_allocated_free(&data);

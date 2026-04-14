@@ -1,8 +1,8 @@
 #ifndef GAME_H
 #define GAME_H
 
-# define WIDTH 1200
-# define HEIGHT 800
+# define WIDTH 1920
+# define HEIGHT 960
 # define TEXTURE_WIDTH 500
 
 # define KEY_W 119

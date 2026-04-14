@@ -23,7 +23,7 @@ t_texture   *get_texture(t_game *game)
 
 int    open_window(t_game *game)
 {
-    game->win = mlx_new_window(game->mlx, 1200, 800, "cub3d");
+    game->win = mlx_new_window(game->mlx, 1920, 960, "T_Cube3D");
     if(!game->win)
     {
         put_error("failure to create window\n");
