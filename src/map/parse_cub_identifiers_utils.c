@@ -48,3 +48,17 @@ void	free_if_line(t_data *data, char *line, int y)
 		free(line);
 	data->map[y] = NULL;
 }
+
+void	remove_end_spaces(char *str)
+{
+	int len;
+
+	if (!str)
+		return ;
+	len = ft_strlen(str) - 1;
+	while (len >= 0 && (str[len] == ' ' || str[len] == '\t'))
+	{
+		str[len] = '\0';
+		len--;
+	}
+}

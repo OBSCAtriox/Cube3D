@@ -54,7 +54,7 @@ int	copy_map_line(t_data *data, char *line, int y, int bigest_len)
 
 	alloc_map_line(data, bigest_len, y);
 	i = 0;
-	while (line[i] && line[i] != '\n')
+	while (line[i] && line[i] != '\n' && i < bigest_len)
 	{
 		data->map[y][i] = line[i];
 		i++;

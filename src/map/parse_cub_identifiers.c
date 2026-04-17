@@ -113,6 +113,7 @@ int	parse_identifiers(t_data *data, int fd)
 		if (count == 6)
 			break ;
 	}
+	image_remove_end_spaces(data);
 	map_count_lines(data, fd);
 	return (1);
 }

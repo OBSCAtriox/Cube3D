@@ -59,7 +59,7 @@ int verify_top_bottom_lines(t_data *d)
     int y;
     
     i = 0;
-    while (d->map[0][i])
+    while (d->map[0] && d->map[0][i])
     {
         if (d->map[0][i] != '1' && !ft_isspace(d->map[0][i]))
             return (0);
@@ -67,7 +67,7 @@ int verify_top_bottom_lines(t_data *d)
     }
     y = d->num_lines - 1;
     i = 0;
-    while (d->map[y][i])
+    while (d->map[y] && d->map[y][i])
     {
         if (d->map[y][i] != '1' && !ft_isspace(d->map[y][i]))
             return (0);

@@ -61,12 +61,21 @@ int			parse_ceilling_color(t_data *data, char *line);
 int			line_identifier_parse(t_data *data, char *line);
 int			parse_identifiers(t_data *data, int fd);
 
+// parse_file.c
+int if_tab(char *line);
+int contains_tabs(t_data *data);
+int verify_map_exist(t_data *data);
+
 // parse_cub_identifiers_utils.c
 char *ft_strdup_n(char *line);
 int			is_empty_line(char *line);
 int			if_not_line_identifier_parse(t_data *data, char *line, char *orig,
 				int fd);
 void	free_if_line(t_data *data, char *line, int y);
+void	remove_end_spaces(char *str);
+
+// parse_image_path.c
+void    image_remove_end_spaces(t_data *data);
 
 // parse_map.c
 int			is_identifier_line(char *line);
@@ -92,6 +101,11 @@ void    flood_fill(t_data *data, int row, int col);
 // parse_map_player.c
 void	locate_player(t_data *d);
 
+// load_textures.c
+int			load_textures(t_data data, t_game *game);
+int 		load_components(t_data *data, t_game *game);
+int 		load_screen(t_game *game);
+
 // open_utils
 // open.c
 void		cub_open(t_data *data, int *fd, char *file);
@@ -100,8 +114,6 @@ int			open_file(t_data *data, char *path);
 // src/verifications
 // file_verifications.c
 int			verify_file_extension(char *str);
-int			verify_rgb(t_data *data);
-int			verify_duplicate(t_ptex *tex);
 void		verify_empty_file(t_data *data, char *file);
 void		verify_onlyspaces_file(t_data *data);
 
@@ -112,10 +124,11 @@ void		execute_verifications(t_data *data);
 void		if_allocated_free(t_data *data);
 void		if_textures_alloc_free(t_data *data);
 
-// load .cub
-int			load_textures(t_data data, t_game *game);
-int 		load_components(t_data *data, t_game *game);
-int 		load_screen(t_game *game);
+// verify_identifiers.c
+int			verify_rgb(t_data *data);
+int			verify_duplicate(t_ptex *tex);
+int			verify_image_extension(char *str);
+int 		verify_images(t_data *data);
 
 // game
 // game.c
