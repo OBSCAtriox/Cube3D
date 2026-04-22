@@ -3,15 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thde-sou <thde-sou@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 19:30:36 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/18 20:11:03 by thde-sou         ###   ########.fr       */
+/*   Updated: 2026/04/22 17:22:46 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Search for a byte in a memory area.
+ * 
+ * This function scans the first n bytes of the memory area
+ * pointed to by s for the first occurrence of c.
+ * 
+ * @param s The memory area to search.
+ * @param c The byte to search for.
+ * @param n The number of bytes to examine.
+ * @return A pointer to the matching byte, or NULL if not found.
+ */
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t			a;

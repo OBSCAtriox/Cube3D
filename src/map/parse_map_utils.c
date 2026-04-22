@@ -22,11 +22,11 @@ void	alloc_map_line(t_data *data, int i, int y)
 
 int	find_longest_line(t_data *data)
 {
-	char *line;
-	int fd;
-	int len;
-	int get_len;
-	
+	char	*line;
+	int		fd;
+	int		len;
+	int		get_len;
+
 	cub_open(data, &fd, data->file);
 	line = skip_to_map_start(fd);
 	if (is_empty_line(line))
@@ -42,7 +42,7 @@ int	find_longest_line(t_data *data)
 		if (len < get_len)
 			len = get_len;
 		free(line);
-		line = ft_gnl(fd);	
+		line = ft_gnl(fd);
 	}
 	close(fd);
 	return (len);
@@ -67,8 +67,8 @@ int	copy_map_line(t_data *data, char *line, int y, int bigest_len)
 
 void	island_handler(t_data *data)
 {
-	int i;
-	int y;
+	int	i;
+	int	y;
 
 	y = 0;
 	while (data->map_copy[y])

@@ -7,7 +7,6 @@ void	if_allocated_free(t_data *data)
 	if (data->map)
 		ft_free_vector(&data->map);
 	if_textures_alloc_free(data);
-
 }
 
 void	if_textures_alloc_free(t_data *data)

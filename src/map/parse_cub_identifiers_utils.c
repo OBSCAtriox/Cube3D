@@ -24,11 +24,11 @@ int	if_not_line_identifier_parse(t_data *data, char *line, char *orig, int fd)
 	return (1);
 }
 
-char *ft_strdup_n(char *line)
+char	*ft_strdup_n(char *line)
 {
-	char *new;
-	int i;
-	
+	char	*new;
+	int		i;
+
 	new = malloc(sizeof(char) * (ft_strlen_n(line) + 1));
 	if (!new)
 		return (NULL);

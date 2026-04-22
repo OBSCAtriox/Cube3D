@@ -97,8 +97,11 @@ int	parse_identifiers(t_data *data, int fd)
 	int		count;
 
 	count = 0;
-	while ((line = ft_gnl(fd)) != NULL)
+	while (1)
 	{
+		line = ft_gnl(fd);
+		if (line == NULL)
+			break ;
 		if (is_empty_line(line))
 		{
 			free(line);
@@ -113,6 +116,5 @@ int	parse_identifiers(t_data *data, int fd)
 		if (count == 6)
 			break ;
 	}
-	map_count_lines(data, fd);
-	return (1);
+	return (map_count_lines(data, fd), 1);
 }

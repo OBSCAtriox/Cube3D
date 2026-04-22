@@ -3,16 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thde-sou <thde-sou@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 20:37:16 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/02 15:42:35 by thde-sou         ###   ########.fr       */
+/*   Updated: 2026/04/22 19:43:51 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
+/**
+ * Calculates the length of a string.
+ *
+ * This function returns the number of characters
+ * in the string, excluding the null terminator.
+ *
+ * @param s The string to measure.
+ * @return The length of the string.
+ */
 size_t	ft_strlen(const char *s)
 {
 	size_t	len;

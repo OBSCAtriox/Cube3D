@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thde-sou <thde-sou@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 04:09:34 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/07/18 05:39:12 by thde-sou         ###   ########.fr       */
+/*   Updated: 2026/04/22 17:20:27 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,16 @@ static char	*if_zero(void)
 	return (str);
 }
 
+/**
+ * Converts a number to a string in a given base.
+ * 
+ * This function converts an unsigned long number into a
+ * string using the specified base. The base must be valid.
+ * 
+ * @param n The number to convert.
+ * @param base The base characters.
+ * @return The converted string, or NULL on failure.
+ */
 char	*ft_itoa_base(unsigned long n, const char *base)
 {
 	unsigned long	base_len;

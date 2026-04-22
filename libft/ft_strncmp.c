@@ -3,15 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thde-sou <thde-sou@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 20:26:38 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/26 07:06:26 by thde-sou         ###   ########.fr       */
+/*   Updated: 2026/04/22 19:50:53 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Compares two strings up to a given length.
+ *
+ * This function compares the first n characters of s1 and s2,
+ * returning the difference between the first differing characters.
+ *
+ * @param s1 The first string.
+ * @param s2 The second string.
+ * @param n The number of characters to compare.
+ * @return An integer less than, equal to, or greater than zero.
+ */
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	a;

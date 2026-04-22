@@ -28,8 +28,8 @@ void	init_data(t_data *data)
 	data->fd_load = 0;
 	init_textures(&data->textures);
 	data->flag_texture[0] = "NO";
-    data->flag_texture[1] = "SO";
-    data->flag_texture[2] = "WE";
-    data->flag_texture[3] = "EA";
-    data->flag_texture[4] = NULL;
+	data->flag_texture[1] = "SO";
+	data->flag_texture[2] = "WE";
+	data->flag_texture[3] = "EA";
+	data->flag_texture[4] = NULL;
 }

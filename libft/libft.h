@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: thde-sou <thde-sou@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/14 18:23:38 by thde-sou          #+#    #+#             */
+/*   Updated: 2026/04/22 20:25:23 by thde-sou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -23,6 +35,7 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
 int					ft_isprint(int c);
 int					ft_isdigit(int c);
 int					ft_isascii(int c);
@@ -70,24 +83,21 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *list, void (*f)(void *));
 int					ft_lstsize(t_list *lst);
 char				*ft_join3(char *s1, char *s2, char *s3);
-size_t				ft_size_vetor(char **vetor);
 char				**ft_vetor_dup(char **vetor);
 void				ft_free_failed_vector(char ***vector, int idx);
 void				ft_free_vector(char ***vector);
 int					ft_isspace(char c);
 char				**ft_split_whitespace(char *str);
 void				ft_strv_shift(char **vector);
-int					ft_strcmp(const char *s1, const char *s2);
 void				ft_memdel(void **prt);
 void				ft_clean_2(void **prt1, void **prt2);
 void				ft_clean_4(void **prt1, void **prt2, void **prt3,
 						void **prt4);
 void				ft_close_fd(int *fd);
-void				*ft_memmem(const void *haystack, size_t haystacklen,
-						const void *needle, size_t needlelen);
+size_t				ft_size_vetor(char **vetor);
+int					ft_strcmp(const char *s1, const char *s2);
 
 /*get_next_line*/
-
 char				*ft_gnl(int fd);
 
 #endif

@@ -12,7 +12,7 @@ int	main(int argc, char *argv[])
 		put_error("Invalid number of arguments");
 		exit(EXIT_FAILURE);
 	}
-	if(!inits(&data, &game))
+	if (!inits(&data, &game))
 		exit(EXIT_FAILURE);
 	data.game = &game;
 	data.file = ft_strdup(argv[1]);
@@ -32,7 +32,7 @@ int	main(int argc, char *argv[])
 	if (!load_components(&data, &game))
 		exit(EXIT_FAILURE);
 	if_allocated_free(&data);
-	if(!run_game(&data, &game))
+	if (!run_game(&data, &game))
 		exit(EXIT_FAILURE);
 	return (0);
 }

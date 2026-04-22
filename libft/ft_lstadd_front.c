@@ -1,17 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thde-sou <thde-sou@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 19:57:56 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/26 20:25:09 by thde-sou         ###   ########.fr       */
+/*   Updated: 2026/04/22 17:20:51 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Adds a node to the beginning of a list.
+ *
+ * This function inserts the given node at the start of the list.
+ * The new node becomes the first element.
+ *
+ * @param lst A pointer to the list.
+ * @param new The node to add.
+ */
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (lst && new)
