@@ -1,7 +1,7 @@
 include includes/colors.mk
 
 CC = cc
-FLAGS = -g -fsanitize=address -O3 -Wall -Werror -Wextra -Iincludes
+FLAGS = -Wall -Werror -Wextra -O3 -Iincludes
 
 NAME = cub3d
 
@@ -24,6 +24,7 @@ src/map/parse_image_path.c src/map/parse_file.c \
 
 OBJ_DIR = obj
 OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)
+
 
 $(OBJ_DIR)/src/game/game.o: FLAGS += -Wno-cast-function-type
 

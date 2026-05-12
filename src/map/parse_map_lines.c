@@ -58,6 +58,8 @@ int verify_top_bottom_lines(t_data *d)
     int i;
     int y;
     
+    if (!d->map[0] || !d->map)
+        return (0);
     i = 0;
     while (d->map[0] && d->map[0][i])
     {
