@@ -39,7 +39,7 @@ int	verify_duplicate(t_ptex *tex)
 
 int	verify_image_extension(char *str)
 {
-	int len;
+	int	len;
 
 	len = ft_strlen(str);
 	if (len < 4)
@@ -47,15 +47,15 @@ int	verify_image_extension(char *str)
 	return (ft_strcmp(str + len - 4, ".xpm"));
 }
 
-int verify_images(t_data *data)
+int	verify_images(t_data *data)
 {
-    if (verify_image_extension(data->textures.no))
-        return (1);
-    if (verify_image_extension(data->textures.so))
-        return (1);
-    if (verify_image_extension(data->textures.we))
-        return (1);
-    if (verify_image_extension(data->textures.ea))
-        return (1);
-    return (0);
+	if (verify_image_extension(data->textures.no))
+		return (1);
+	if (verify_image_extension(data->textures.so))
+		return (1);
+	if (verify_image_extension(data->textures.we))
+		return (1);
+	if (verify_image_extension(data->textures.ea))
+		return (1);
+	return (0);
 }

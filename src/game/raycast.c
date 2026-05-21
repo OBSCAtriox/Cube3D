@@ -2,7 +2,7 @@
 
 static void	calc_wall_collision(t_game *game)
 {
-	int		tex_x;
+	int	tex_x;
 
 	if (game->ray.side == 0)
 		game->ray.wall_x = game->player.pos_y + game->ray.perp_wall_dist
