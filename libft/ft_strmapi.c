@@ -3,15 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thde-sou <thde-sou@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 21:42:47 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/05 23:58:19 by thde-sou         ###   ########.fr       */
+/*   Updated: 2026/04/22 19:47:05 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Creates a new string by applying a function to each character.
+ * 
+ * This function allocates a new string where each character
+ * is the result of applying the function to the original string.
+ * 
+ * @param s The string to iterate over.
+ * @param f The function applied to each character.
+ * @return The new string, or NULL on failure.
+ */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char		*new_str;

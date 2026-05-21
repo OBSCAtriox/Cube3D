@@ -3,15 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thde-sou <thde-sou@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 15:17:35 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/02 17:24:14 by thde-sou         ###   ########.fr       */
+/*   Updated: 2026/04/22 17:35:34 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Copies memory with overlap handling.
+ * 
+ * This function copies n bytes from src to dest. It handles
+ * overlapping memory areas safely by choosing the copy direction.
+ * 
+ * @param dest The destination memory area.
+ * @param src The source memory area.
+ * @param n The number of bytes to copy.
+ * @return The destination pointer.
+ */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t				a;

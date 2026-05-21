@@ -1,4 +1,4 @@
-# include "cube3d.h"
+#include "cube3d.h"
 
 static double get_speed(t_game *game)
 {
@@ -12,11 +12,11 @@ static double get_speed(t_game *game)
 
 void    move_forward(t_game *game)
 {
-    char        **map;
-    double      pos_y;
-    double      pos_x;
-    double      dir_x;
-    double      dir_y;
+	char	**map;
+	double	pos_y;
+	double	pos_x;
+	double	dir_x;
+	double	dir_y;
 
     map = game->map.grid;
     pos_y = game->player.pos_y;
@@ -29,13 +29,13 @@ void    move_forward(t_game *game)
         game->player.pos_y += dir_y * get_speed(game);
 }
 
-void    move_backward(t_game *game)
+void	move_backward(t_game *game)
 {
-    char        **map;
-    double      pos_y;
-    double      pos_x;
-    double      dir_x;
-    double      dir_y;
+	char	**map;
+	double	pos_y;
+	double	pos_x;
+	double	dir_x;
+	double	dir_y;
 
     map = game->map.grid;
     pos_y = game->player.pos_y;
@@ -48,13 +48,13 @@ void    move_backward(t_game *game)
         game->player.pos_y -= dir_y * get_speed(game);
 }
 
-void    move_right(t_game *game)
+void	move_right(t_game *game)
 {
-    char        **map;
-    double      pos_y;
-    double      pos_x;
-    double      plane_x;
-    double      plane_y;
+	char	**map;
+	double	pos_y;
+	double	pos_x;
+	double	plane_x;
+	double	plane_y;
 
     map = game->map.grid;
     pos_y = game->player.pos_y;
@@ -67,13 +67,13 @@ void    move_right(t_game *game)
         game->player.pos_y += plane_y * get_speed(game);
 }
 
-void    move_left(t_game *game)
+void	move_left(t_game *game)
 {
-    char        **map;
-    double      pos_y;
-    double      pos_x;
-    double      plane_x;
-    double      plane_y;
+	char	**map;
+	double	pos_y;
+	double	pos_x;
+	double	plane_x;
+	double	plane_y;
 
     map = game->map.grid;
     pos_y = game->player.pos_y;

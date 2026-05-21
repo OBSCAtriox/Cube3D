@@ -1,54 +1,55 @@
 #include "../../includes/cube3d.h"
 
-t_texture   *get_texture(t_game *game)
+t_texture	*get_texture(t_game *game)
 {
-    t_tex *tex;
+	t_tex	*tex;
 
-    tex = &game->tex;
-    if (game->ray.side == 0)
-    {
-        if (game->ray.ray_dir_x > 0)
-            return (&tex->west);
-        else
-            return (&tex->east);
-    }
-    else
-    {
-        if (game->ray.ray_dir_y > 0)
-            return (&tex->north);
-        else
-            return (&tex->south);
-    }
+	tex = &game->tex;
+	if (game->ray.side == 0)
+	{
+		if (game->ray.ray_dir_x > 0)
+			return (&tex->west);
+		else
+			return (&tex->east);
+	}
+	else
+	{
+		if (game->ray.ray_dir_y > 0)
+			return (&tex->north);
+		else
+			return (&tex->south);
+	}
 }
 
-int    open_window(t_game *game)
+int	open_window(t_game *game)
 {
-    game->win = mlx_new_window(game->mlx, 1920, 960, "T_Cube3D");
-    if(!game->win)
-    {
-        put_error("failure to create window\n");
-        return (FALSE);
-    }
-    return (TRUE);
+	game->win = mlx_new_window(game->mlx, 1920, 960, "T_Cube3D");
+	if (!game->win)
+	{
+		put_error("failure to create window\n");
+		return (FALSE);
+	}
+	return (TRUE);
 }
 
-void    render_frame(t_game *game)
+void	render_frame(t_game *game)
 {
-    int x = 0;
+	int	x;
 
-    ft_memset(game->screen.addr, 0, game->screen.line_len * HEIGHT);
-    while (x < WIDTH)
-    {
-        cast_ray(game, x);
-        draw_column(game, x);
-        x++;
-    }
-    mlx_put_image_to_window(game->mlx, game->win, game->screen.img_ptr, 0, 0);
+	x = 0;
+	ft_memset(game->screen.addr, 0, game->screen.line_len * HEIGHT);
+	while (x < WIDTH)
+	{
+		cast_ray(game, x);
+		draw_column(game, x);
+		x++;
+	}
+	mlx_put_image_to_window(game->mlx, game->win, game->screen.img_ptr, 0, 0);
 }
 
-void cast_ray(t_game *game, int x)
+void	cast_ray(t_game *game, int x)
 {
-    init_ray(game, x);
-    execute_dda(game);
-    calc_wall_projection(game);
+	init_ray(game, x);
+	execute_dda(game);
+	calc_wall_projection(game);
 }

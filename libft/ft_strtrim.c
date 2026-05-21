@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thde-sou <thde-sou@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 04:17:35 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/06 00:00:12 by thde-sou         ###   ########.fr       */
+/*   Updated: 2026/04/22 19:56:22 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,16 @@ static int	end(char const *str, char const *prt)
 	return (ft_strlen(str) - found);
 }
 
+/**
+ * Trims characters from the beginning and end of a string.
+ *
+ * This function allocates and returns a copy of s1 with all
+ * characters from set removed from both ends.
+ *
+ * @param s1 The string to trim.
+ * @param set The set of characters to remove.
+ * @return The trimmed string, or NULL on failure.
+ */
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		idx1;

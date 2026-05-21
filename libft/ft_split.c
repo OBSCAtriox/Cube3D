@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thde-sou <thde-sou@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 05:01:11 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/05 23:49:33 by thde-sou         ###   ########.fr       */
+/*   Updated: 2026/04/22 19:20:06 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,16 @@ static void	free_all(char **arr)
 	free(arr);
 }
 
+/**
+ * Splits a string using a delimiter character.
+ *
+ * This function creates an array of strings by
+ * splitting the input string at each delimiter.
+ *
+ * @param s The string to split.
+ * @param c The delimiter character.
+ * @return The allocated array, or NULL on failure.
+ */
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;

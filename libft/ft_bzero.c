@@ -3,15 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thde-sou <thde-sou@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 19:46:17 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/15 20:21:53 by thde-sou         ###   ########.fr       */
+/*   Updated: 2026/04/22 17:18:25 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Sets a block of memory to zero.
+ *
+ * This function fills the first n bytes of the memory area pointed to by s
+ * with zeroes. It is typically used to initialize or clear memory.
+ *
+ * @param s The memory area to be cleared.
+ * @param n The number of bytes to set to zero.
+ */
 void	ft_bzero(void *s, size_t n)
 {
 	size_t			a;

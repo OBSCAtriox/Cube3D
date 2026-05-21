@@ -1,17 +1,17 @@
-# include "cube3d.h"
+#include "cube3d.h"
 
-void    put_pixel(t_img *img, int x, int y, int color)
+void	put_pixel(t_img *img, int x, int y, int color)
 {
-    char    *dst;
+	char	*dst;
 
-    dst = img->addr + (y * img->line_len + x *(img->bpp / 8));
-    *(unsigned int *)dst = color;
+	dst = img->addr + (y * img->line_len + x * (img->bpp / 8));
+	*(unsigned int *)dst = color;
 }
 
-int get_texture_pixel(t_texture *tex, int x, int y)
+int	get_texture_pixel(t_texture *tex, int x, int y)
 {
-    char    *pixel;
+	char	*pixel;
 
-    pixel = tex->img.addr + (y * tex->img.line_len + x * (tex->img.bpp / 8));
-    return *(unsigned int *)pixel;
+	pixel = tex->img.addr + (y * tex->img.line_len + x * (tex->img.bpp / 8));
+	return (*(unsigned int *)pixel);
 }

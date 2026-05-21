@@ -1,17 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thde-sou <thde-sou@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 18:26:53 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/06 06:18:06 by thde-sou         ###   ########.fr       */
+/*   Updated: 2026/04/22 17:22:09 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Returns the last node of a list.
+ * 
+ * This function traverses the list and returns the last node.
+ * Returns NULL if a list is empty.
+ * 
+ * @param lst The list to search.
+ * @return The last node, or NULL if the list is empty.
+ */
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)

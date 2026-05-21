@@ -3,15 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thde-sou <thde-sou@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 18:28:41 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/02 15:23:14 by thde-sou         ###   ########.fr       */
+/*   Updated: 2026/04/22 17:18:42 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/**
+ * Allocates zero-initialized memory.
+ *
+ * This function allocates memory for an array of nmenb elements of
+ * size bytes each and initializes the allocated memory to zero.
+ *
+ * @param nmenb The number of elements to allocate.
+ * @param size The size of each element.
+ * @return A pointer to the allocated memory, or NULL on failure.
+ */
 void	*ft_calloc(size_t nmenb, size_t size)
 {
 	void	*arr;

@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strv_shift.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thde-sou <thde-sou@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 01:10:58 by thde-sou          #+#    #+#             */
-/*   Updated: 2026/01/25 02:24:25 by thde-sou         ###   ########.fr       */
+/*   Updated: 2026/04/22 19:57:19 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Shifts a string array to the left.
+ *
+ * This function frees the first element of the array and
+ * shifts all remaining elements one position to the left.
+ *
+ * @param vector The string array to shift.
+ */
 void	ft_strv_shift(char **vector)
 {
 	int	i;

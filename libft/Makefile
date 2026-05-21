@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+         #
+#    By: thde-sou <thde-sou@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/15 18:08:12 by thde-sou          #+#    #+#              #
-#    Updated: 2026/04/14 17:51:55 by tide-pau         ###   ########.fr        #
+#    Updated: 2026/04/22 20:15:56 by thde-sou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,9 @@ ft_isascii.c  ft_memmove.c  ft_strchr.c      ft_strmapi.c   ft_toupper.c \
 ft_isdigit.c  ft_memset.c   ft_strdup.c      ft_strncmp.c       ft_itoa_base.c \
 ft_strv_shift.c ft_split_whitespace.c ft_size_vetor.c ft_join3.c \
 ft_isspace.c ft_free_vector.c  ft_free_failed_vector.c ft_vetor_dup.c \
-ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
-ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
-ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c ft_gnl.c \
+ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
+ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
+ft_lstclear.c ft_lstiter.c ft_lstmap.c ft_gnl.c \
 ft_memdel.c ft_clean_4.c ft_clean_2.c ft_close_fd.c \
 ft_strcmp.c ft_memmem.c\
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split_whitespace.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thde-sou <thde-sou@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 01:05:42 by thde-sou          #+#    #+#             */
-/*   Updated: 2026/01/25 01:26:59 by thde-sou         ###   ########.fr       */
+/*   Updated: 2026/04/22 19:16:45 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,15 @@ static void	free_split(char **arr)
 	free(arr);
 }
 
+/**
+ * Splits a string using whitespace as a separator.
+ *
+ * This function creates an array of strings by splitting
+ * the input string at whitespace characters.
+ *
+ * @param str The string to split.
+ * @return The allocated array of words, or NULL on failure.
+ */
 char	**ft_split_whitespace(char *str)
 {
 	char	**arr;

@@ -1,6 +1,6 @@
-# include "cube3d.h"
+#include "cube3d.h"
 
-int key_press(int keycode, t_game *game)
+int	key_press(int keycode, t_game *game)
 {
     if (keycode == KEY_W)
         game->keys.w = TRUE;
@@ -22,10 +22,10 @@ int key_press(int keycode, t_game *game)
         close_game(game);
     if (keycode == KEY_SHIFT)
         game->player.running = TRUE;
-    return (0);    
+    return (0);
 }
 
-int key_realease(int keycode, t_game *game)
+int	key_realease(int keycode, t_game *game)
 {
     if (keycode == KEY_W)
         game->keys.w = FALSE;
@@ -48,22 +48,22 @@ int key_realease(int keycode, t_game *game)
     return (0);
 }
 
-void    update_player(t_game *game)
+void	update_player(t_game *game)
 {
-    if (game->keys.w)
-        move_forward(game);
-    if (game->keys.s)
-        move_backward(game);
-    if (game->keys.a)
-        move_left(game);
-    if (game->keys.d)
-        move_right(game);
-    if (game->keys.right)
-        rotate_right(game);
-    if (game->keys.left)
-        rotate_left(game);
-    if (game->keys.up)
-        rotate_up_down(game, 1);
-    if (game->keys.down)
-        rotate_up_down(game, -1);
+	if (game->keys.w)
+		move_forward(game);
+	if (game->keys.s)
+		move_backward(game);
+	if (game->keys.a)
+		move_left(game);
+	if (game->keys.d)
+		move_right(game);
+	if (game->keys.right)
+		rotate_right(game);
+	if (game->keys.left)
+		rotate_left(game);
+	if (game->keys.up)
+		rotate_up_down(game, 1);
+	if (game->keys.down)
+		rotate_up_down(game, -1);
 }

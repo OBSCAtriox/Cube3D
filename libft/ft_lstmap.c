@@ -1,17 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thde-sou <thde-sou@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 23:25:53 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/04 18:26:25 by thde-sou         ###   ########.fr       */
+/*   Updated: 2026/04/22 17:22:21 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Creates a new list by applying a function to each node.
+ * 
+ * This function iterates over the list, applies the function
+ * to each content, and creates a new list with the results.
+ * If allocation fails, it cleans up and returns NULL.
+ * 
+ * @param lst The list to iterate over.
+ * @param f The function applied to each content.
+ * @param del The function to delete content on failure.
+ * @return The new list, or NULL on failure.
+ */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;

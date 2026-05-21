@@ -3,15 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_vetor_dup.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: thde-sou <thde-sou@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 00:34:30 by thde-sou          #+#    #+#             */
-/*   Updated: 2026/03/30 11:12:45 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/04/22 20:26:36 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Duplicates a null-terminated string array.
+ *
+ * This function allocates and returns a copy of the
+ * given string array, duplicating each element.
+ *
+ * @param vetor The array to duplicate.
+ * @return The duplicated array, or NULL on failure.
+ */
 char	**ft_vetor_dup(char **vetor)
 {
 	size_t	size;

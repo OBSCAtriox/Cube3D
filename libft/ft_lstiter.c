@@ -1,17 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thde-sou <thde-sou@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 22:16:39 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/06 06:22:55 by thde-sou         ###   ########.fr       */
+/*   Updated: 2026/04/22 17:22:04 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Iterates over a list and applies a function to each node.
+ *
+ * This function traverses the list and applies the given
+ * function to the content of each node.
+ *
+ * @param lst The list to iterate over.
+ * @param f The function to apply to each content.
+ */
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst || !f)
@@ -23,7 +32,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	}
 }
 
-void	lst_f(void *content)
+/* void	lst_f(void *content)
 {
 	int		a;
 	char	*str;
@@ -36,7 +45,7 @@ void	lst_f(void *content)
 			str[a] -= 32;
 		a++;
 	}
-}
+} */
 
 /* void    lst_f(void *content);
 

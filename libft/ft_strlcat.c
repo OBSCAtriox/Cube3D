@@ -3,15 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thde-sou <thde-sou@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 21:18:58 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/19 23:36:34 by thde-sou         ###   ########.fr       */
+/*   Updated: 2026/04/22 19:38:39 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Appends a string to another with a size limit.
+ *
+ * This function appends src to dest, ensuring the total
+ * length does not exceed size, and returns the total
+ * length of the string it tried to create.
+ *
+ * @param dst The destination string.
+ * @param src The source string.
+ * @param size The size of the destination buffer.
+ * @return The total length of the resulting string.
+ */
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	a;

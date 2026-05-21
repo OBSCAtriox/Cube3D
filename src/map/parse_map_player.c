@@ -28,16 +28,16 @@ static void	locate_player_helper(t_data *d, int y, char *line, int *p_found)
 
 void	locate_player(t_data *d)
 {
-	int		y;
-	int		player_found;
+	int	y;
+	int	player_found;
 
 	player_found = FALSE;
 	y = 0;
 	while (d->map[y])
 	{
 		locate_player_helper(d, y, d->map[y], &player_found);
-        y++;
+		y++;
 	}
-    if (player_found == FALSE)
-        exit_error(d, "Player not found\n", 0);
+	if (player_found == FALSE)
+		exit_error(d, "Player not found\n", 0);
 }
