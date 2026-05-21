@@ -105,6 +105,11 @@ void	parse_map(t_data *data, int fd)
 		close(fd);
 		exit_error(data, "Map is invalid\n", 0);
 	}
+	if (!verify_map_size(data))
+	{
+		close(fd);
+		exit_error(data, "Map is too big\n", 0);
+	}
 	data->map_max_rows = ft_size_vetor(data->map);
 	locate_player(data);
 	data->map_copy = ft_vetor_dup(data->map);

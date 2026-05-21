@@ -1,17 +1,15 @@
- NO resources/textures/xpm/brick_wall.xpm
-
- SO resources/textures/xpm/south_texture.xpm
-
- WE resources/textures/xpm/west_texture.xpm
-
- EA resources/textures/xpm/east_texture.xpm
+NO resources/textures/xpm/wood.xpm
+SO resources/textures/xpm/obsi.xpm              
+WE resources/textures/xpm/netherrack.xpm
+EA resources/textures/xpm/coble.xpm
 
  F 220,100,0
 
  C 50,50,50
  
-
-
+111
+1N1
+111
 
 
 

@@ -3,44 +3,48 @@
 int key_press(int keycode, t_game *game)
 {
     if (keycode == KEY_W)
-        game->keys.w = 1;
+        game->keys.w = TRUE;
     if (keycode == KEY_S)
-        game->keys.s = 1;
+        game->keys.s = TRUE;
     if (keycode == KEY_A)
-        game->keys.a = 1;
+        game->keys.a = TRUE;
     if (keycode == KEY_D)
-        game->keys.d = 1;
+        game->keys.d = TRUE;
     if (keycode == KEY_LEFT)
-        game->keys.left = 1;
+        game->keys.left = TRUE;
     if (keycode == KEY_RIGHT)
-        game->keys.right = 1;
+        game->keys.right = TRUE;
     if (keycode == KEY_UP)
-        game->keys.up = 1;
+        game->keys.up = TRUE;
     if (keycode == KEY_DOWN)
-        game->keys.down = 1;
+        game->keys.down = TRUE;
     if (keycode == ESC)
         close_game(game);
+    if (keycode == KEY_SHIFT)
+        game->player.running = TRUE;
     return (0);    
 }
 
 int key_realease(int keycode, t_game *game)
 {
     if (keycode == KEY_W)
-        game->keys.w = 0;
+        game->keys.w = FALSE;
     if (keycode == KEY_S)
-        game->keys.s = 0;
+        game->keys.s = FALSE;
     if (keycode == KEY_A)
-        game->keys.a = 0;
+        game->keys.a = FALSE;
     if (keycode == KEY_D)
-        game->keys.d = 0;
+        game->keys.d = FALSE;
     if (keycode == KEY_LEFT)
-        game->keys.left = 0;
+        game->keys.left = FALSE;
     if (keycode == KEY_RIGHT)
-        game->keys.right = 0;
+        game->keys.right = FALSE;
     if (keycode == KEY_UP)
-        game->keys.up = 0;
+        game->keys.up = FALSE;
     if (keycode == KEY_DOWN)
-        game->keys.down = 0;
+        game->keys.down = FALSE;
+    if (keycode == KEY_SHIFT)
+        game->player.running = FALSE;
     return (0);
 }
 

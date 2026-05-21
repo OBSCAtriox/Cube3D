@@ -14,6 +14,7 @@
 # define KEY_LEFT 65361
 # define KEY_RIGHT 65363
 # define ESC 65307
+# define KEY_SHIFT 65505
 
 # define SPEED 0.07
 # define ROT_SPEED 0.05
@@ -44,6 +45,7 @@ typedef struct s_player
 	double	plane_x;    // plano da câmera (eixo X) — define largura do campo de visão
 	double	plane_y;    // plano da câmera (eixo Y) — usado para gerar os raios
 	double	pitch;
+	int	running;
 }	t_player;
 
 typedef struct s_map

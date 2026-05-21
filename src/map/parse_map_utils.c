@@ -44,6 +44,7 @@ int	find_longest_line(t_data *data)
 		free(line);
 		line = ft_gnl(fd);	
 	}
+	free(line);
 	close(fd);
 	return (len);
 }

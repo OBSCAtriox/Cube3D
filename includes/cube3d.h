@@ -130,6 +130,9 @@ int			verify_duplicate(t_ptex *tex);
 int			verify_image_extension(char *str);
 int 		verify_images(t_data *data);
 
+// verify_map_size.c
+int verify_map_size(t_data *data);
+
 // game
 // game.c
 int run_game(t_data *data, t_game *game);
