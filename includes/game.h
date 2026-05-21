@@ -18,7 +18,6 @@
 
 # define SPEED 0.07
 # define ROT_SPEED 0.05
-# define ROT_SPEED_UP_DOWN ROT_SPEED * 450
 
 typedef struct s_img
 {
