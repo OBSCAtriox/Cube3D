@@ -6,5 +6,4 @@ void	execute_verifications(t_data *data)
 		exit_error(data, "Error: invalid color\n", 0);
 	if (!verify_duplicate(&data->textures))
 		exit_error(data, "Error: duplicate found\n", 0);
-	
 }

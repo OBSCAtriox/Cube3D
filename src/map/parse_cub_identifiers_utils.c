@@ -51,7 +51,7 @@ void	free_if_line(t_data *data, char *line, int y)
 
 void	remove_end_spaces(char *str)
 {
-	int len;
+	int	len;
 
 	if (!str)
 		return ;

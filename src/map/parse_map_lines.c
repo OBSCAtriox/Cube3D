@@ -56,27 +56,27 @@ int	verify_line_borders(t_data *d)
 
 int	verify_top_bottom_lines(t_data *d)
 {
-    int i;
-    int y;
-    
-    if (!d->map[0] || !d->map)
-        return (0);
-    i = 0;
-    while (d->map[0] && d->map[0][i])
-    {
-        if (d->map[0][i] != '1' && !ft_isspace(d->map[0][i]))
-            return (0);
-        i++;
-    }
-    y = d->num_lines - 1;
-    i = 0;
-    while (d->map[y] && d->map[y][i])
-    {
-        if (d->map[y][i] != '1' && !ft_isspace(d->map[y][i]))
-            return (0);
-        i++;
-    }
-    return (1);
+	int	i;
+	int	y;
+
+	if (!d->map[0] || !d->map)
+		return (0);
+	i = 0;
+	while (d->map[0] && d->map[0][i])
+	{
+		if (d->map[0][i] != '1' && !ft_isspace(d->map[0][i]))
+			return (0);
+		i++;
+	}
+	y = d->num_lines - 1;
+	i = 0;
+	while (d->map[y] && d->map[y][i])
+	{
+		if (d->map[y][i] != '1' && !ft_isspace(d->map[y][i]))
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 void	flood_fill(t_data *data, int row, int col)

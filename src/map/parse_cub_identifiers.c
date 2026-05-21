@@ -108,10 +108,8 @@ int	parse_identifiers(t_data *data, int fd)
 			continue ;
 		}
 		orig = line;
-		line = trim_lead(line);
-		if (!if_not_line_identifier_parse(data, line, orig, fd))
+		if (!identifiers_utils(data, &line, orig, fd))
 			return (0);
-		free(orig);
 		count++;
 		if (count == 6)
 			break ;

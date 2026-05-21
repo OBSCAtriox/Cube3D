@@ -37,16 +37,15 @@ typedef struct s_texture
 
 typedef struct s_player
 {
-	double	pos_x;      // posição do jogador no mapa (eixo X)
-	double	pos_y;      // posição do jogador no mapa (eixo Y)
-	double	dir_x;      // direção atual que o jogador está olhando (X)
-	double	dir_y;      // direção atual que o jogador está olhando (Y)
-	double	plane_x;    // plano da câmera (eixo X) — define largura do campo de visão
-	double	plane_y;    // plano da câmera (eixo Y) — usado para gerar os raios
-	double	pitch;
-	int		running;
-}	t_player;
-
+	double		pos_x;
+	double		pos_y;
+	double		dir_x;
+	double		dir_y;
+	double		plane_x;
+	double		plane_y;
+	double		pitch;
+	int			running;
+}				t_player;
 
 typedef struct s_map
 {
